@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="logo.pnj.png" type="image/png">
+  <title>User Dashboard - WorldLink Migration & Visa Consultancy</title>
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .dash-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; }
+    .dash-welcome {
+      background: var(--card); border: 1px solid var(--card-border); border-radius: 16px;
+      padding: 24px 28px; display: flex; align-items: center; gap: 16px;
+    }
+    .dash-avatar { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #6c8cff, #00d4ff); display: grid; place-items: center; font-size: 1.4rem; }
+    .dash-welcome h3 { margin: 0 0 4px; font-size: 1.3rem; }
+    .dash-welcome p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .dash-stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .stat-card {
+      background: var(--card); border: 1px solid var(--card-border); border-radius: 12px;
+      padding: 20px; text-align: center; transition: transform 0.2s;
+    }
+    .stat-card:hover { transform: translateY(-3px); }
+    .stat-card-icon { font-size: 2rem; margin-bottom: 8px; }
+    .stat-card-number { font-size: 1.8rem; font-weight: 800; color: var(--accent); }
+    .stat-card-label { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+    .dash-section { margin-bottom: 36px; }
+    .dash-section h3 { margin-bottom: 16px; }
+    .app-card {
+      background: var(--card); border: 1px solid var(--card-border); border-radius: 12px;
+      padding: 20px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+      margin-bottom: 12px; transition: border-color 0.2s;
+    }
+    .app-card:hover { border-color: rgba(108,140,255,0.3); }
+    .app-country-flag { font-size: 2rem; }
+    .app-info { flex: 1; min-width: 200px; }
+    .app-info h4 { margin: 0 0 4px; font-size: 1rem; }
+    .app-info p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+    .app-status { text-align: right; }
+    .status-pill { display: inline-block; padding: 5px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; }
+    .status-pending { background: rgba(255,193,7,0.2); color: #ffc107; border: 1px solid rgba(255,193,7,0.3); }
+    .status-approved { background: rgba(40,167,69,0.2); color: #28a745; border: 1px solid rgba(40,167,69,0.3); }
+    .status-rejected { background: rgba(220,53,69,0.2); color: #dc3545; border: 1px solid rgba(220,53,69,0.3); }
+    .no-apps { text-align: center; padding: 40px; color: var(--muted); background: var(--card); border: 1px dashed rgba(255,255,255,0.1); border-radius: 12px; }
+    .no-apps p { margin: 0 0 16px; }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="main.html" class="brand" aria-label="WorldLink home">
+      <img src="logo.pnj.png" alt="WorldLink Logo">
+      <span class="brand-name">WorldLink Migration & Visa Consultancy</span>
+    </a>
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Open menu">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <button class="nav-close" onclick="toggleMobileNav()">✕</button>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="#services">Services <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="visa-applications.html">Visa Applications</a></li>
+            <li><a href="immigration-advice.html">Immigration Advice</a></li>
+            <li><a href="document-preparation.html">Document Preparation</a></li>
+            <li><a href="consultation-support.html">Consultation & Support</a></li>
+          </ul>
+        </li>
+        <li><a href="#about">About <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="mission.html">Mission</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="get-in-touch.html">Get in Touch</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </li>
+        <li><a href="#study">Study Destinations <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="usa.html">USA</a></li>
+            <li><a href="canada.html">Canada</a></li>
+            <li><a href="uk.html">UK</a></li>
+            <li><a href="australia.html">Australia</a></li>
+            <li><a href="malaysia.html">Malaysia</a></li>
+            <li><a href="china.html">China</a></li>
+          </ul>
+        </li>
+        <li id="authNavItem"><a href="user-dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section-sm">
+    <!-- WELCOME HEADER -->
+    <div class="dash-header">
+      <div class="dash-welcome">
+        <div class="dash-avatar">👤</div>
+        <div>
+          <h3 id="dashGreeting">Welcome to Your Dashboard</h3>
+          <p id="dashEmail">Manage your visa applications and profile</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="apply-now.html" class="btn" style="padding:10px 18px;">📋 New Application</a>
+        <a href="#" onclick="logout()" class="btn btn-outline">Logout</a>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="dash-stats">
+      <div class="stat-card">
+        <div class="stat-card-icon">📋</div>
+        <div class="stat-card-number" id="statTotal">0</div>
+        <div class="stat-card-label">Total Applications</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon">⏳</div>
+        <div class="stat-card-number" id="statPending">0</div>
+        <div class="stat-card-label">Pending</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon">✅</div>
+        <div class="stat-card-number" id="statApproved">0</div>
+        <div class="stat-card-label">Approved</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon">❌</div>
+        <div class="stat-card-number" id="statRejected">0</div>
+        <div class="stat-card-label">Rejected</div>
+      </div>
+    </div>
+
+    <!-- QUICK ACTIONS -->
+    <div class="dash-section">
+      <h3>Quick Actions</h3>
+      <div class="grid-3">
+        <a href="apply-now.html" class="card" style="display:block;color:inherit;text-decoration:none;">
+          <h3>📝 New Application</h3>
+          <p>Start a new visa or study abroad application.</p>
+        </a>
+        <a href="https://wa.me/601124328920" target="_blank" class="card" style="display:block;color:inherit;text-decoration:none;">
+          <h3>💬 WhatsApp Us</h3>
+          <p>Chat with our consultants instantly.</p>
+        </a>
+        <a href="main.html#contact" class="card" style="display:block;color:inherit;text-decoration:none;">
+          <h3>📧 Contact Support</h3>
+          <p>Send us a message about your application.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- MY APPLICATIONS -->
+    <div class="dash-section">
+      <h3>My Applications</h3>
+      <div id="applicationsContainer">
+        <div class="no-apps" id="noAppsMsg">
+          <p>You haven't submitted any applications yet.</p>
+          <a href="apply-now.html" class="btn">Start Your First Application →</a>
+        </div>
+        <div id="appsList" style="display:none;"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.pnj.png" alt="WorldLink Logo">
+        <h3>WorldLink Migration & Visa Consultancy</h3>
+        <p>Your trusted partner for global migration and study abroad services.</p>
+        <div class="footer-buttons">
+          <a href="https://wa.me/601124328920" target="_blank">WhatsApp</a>
+          <a href="mailto:enuires.worldlinkmigration@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="visa-applications.html">Visa Applications</a></li>
+        <li><a href="immigration-advice.html">Immigration Advice</a></li>
+        <li><a href="document-preparation.html">Document Preparation</a></li>
+        <li><a href="consultation-support.html">Consultation & Support</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Destinations</h4><ul>
+        <li><a href="usa.html">USA</a></li>
+        <li><a href="canada.html">Canada</a></li>
+        <li><a href="uk.html">UK</a></li>
+        <li><a href="australia.html">Australia</a></li>
+        <li><a href="malaysia.html">Malaysia</a></li>
+        <li><a href="china.html">China</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="get-in-touch.html">Get in Touch</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="apply-now.html">Apply Now</a></li>
+      </ul>
+      <p style="margin-top:16px;font-size:0.85rem;">📞 +6011 2432 8920<br>📍 Rajshahi, Bangladesh</p></div>
+    </div>
+    <div class="footer-bottom"><p>Copyright © 2025 WorldLink Migration & Visa Consultancy. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="auth.js"></script>
+<script>
+function toggleMobileNav() { document.getElementById('mainNav').classList.toggle('open'); }
+
+function updateAuthNav() {
+  const user = getCurrentUser();
+  const authItem = document.getElementById('authNavItem');
+  if (!authItem) return;
+  if (user) {
+    authItem.innerHTML = `<a href="#">👤 ${user.username} <span class="nav-arrow">▾</span></a><ul>
+      <li><a href="${user.role==='admin'?'admin-panel.html':'user-dashboard.html'}">Dashboard</a></li>
+      <li><a href="#" onclick="logout()">Logout</a></li></ul>`;
+    document.getElementById('dashGreeting').textContent = `Welcome, ${user.username}!`;
+    document.getElementById('dashEmail').textContent = user.email;
+  }
+}
+
+function loadMyApplications() {
+  const user = getCurrentUser();
+  if (!user) return;
+  const allApps = JSON.parse(localStorage.getItem('applications') || '[]');
+  const myApps = allApps.filter(a => a.userId === user.username);
+
+  document.getElementById('statTotal').textContent = myApps.length;
+  document.getElementById('statPending').textContent = myApps.filter(a => a.status === 'pending').length;
+  document.getElementById('statApproved').textContent = myApps.filter(a => a.status === 'approved').length;
+  document.getElementById('statRejected').textContent = myApps.filter(a => a.status === 'rejected').length;
+
+  const container = document.getElementById('appsList');
+  const noApps = document.getElementById('noAppsMsg');
+
+  if (myApps.length === 0) {
+    noApps.style.display = 'block';
+    container.style.display = 'none';
+    return;
+  }
+
+  noApps.style.display = 'none';
+  container.style.display = 'flex';
+  container.style.flexDirection = 'column';
+  container.innerHTML = '';
+
+  myApps.forEach(app => {
+    const flag = { usa:'🇺🇸', canada:'🇨🇦', uk:'🇬🇧', australia:'🇦🇺', malaysia:'🇲🇾', china:'🇨🇳' }[app.country] || '🌍';
+    const statusClass = app.status === 'approved' ? 'status-approved' : app.status === 'rejected' ? 'status-rejected' : 'status-pending';
+    container.innerHTML += `
+      <div class="app-card">
+        <div class="app-country-flag">${flag}</div>
+        <div class="app-info">
+          <h4>${app.interestedCourse} — ${app.country.toUpperCase()}</h4>
+          <p>University: ${app.university || 'Not specified'} &nbsp;|&nbsp; Submitted: ${new Date(app.submittedAt).toLocaleDateString()}</p>
+        </div>
+        <div class="app-status">
+          <span class="status-pill ${statusClass}">${app.status}</span>
+        </div>
+      </div>`;
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  protectUserPage();
+  updateAuthNav();
+  loadMyApplications();
+});
+</script>
+</body>
+</html>

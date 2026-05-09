@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study in Malaysia - WorldLink Migration & Visa Consultancy</title>
+  <link rel="icon" href="logo.pnj.png" type="image/png">
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .page-hero { background: linear-gradient(135deg, rgba(108,140,255,0.18), rgba(0,80,150,0.4)); border-bottom: 1px solid var(--nav-border); padding: 60px 0 40px; text-align: center; }
+    .quick-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin: 28px auto; max-width: 780px; }
+    .quick-fact { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px; text-align: center; }
+    .quick-fact-icon { font-size: 1.6rem; margin-bottom: 6px; }
+    .quick-fact-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .quick-fact-value { font-size: 1rem; font-weight: 700; margin-top: 4px; color: var(--accent); }
+    .visa-step { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+    .step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 800; flex-shrink: 0; }
+    .step-content h4 { margin: 0 0 4px; }
+    .step-content p { margin: 0; font-size: 0.9rem; }
+    .highlight-box { padding: 20px 24px; border-radius: 12px; background: rgba(108,140,255,0.08); border: 1px solid rgba(108,140,255,0.2); border-left: 4px solid var(--accent); margin: 24px 0; }
+    .highlight-box h4 { margin: 0 0 8px; color: var(--accent); }
+    .highlight-box p { margin: 0; }
+    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 90; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: grid; place-items: center; font-size: 1.5rem; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.2s; }
+    .whatsapp-float:hover { transform: scale(1.1); }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="main.html" class="brand"><img src="logo.pnj.png" alt="WorldLink Logo"><span class="brand-name">WorldLink Migration & Visa Consultancy</span></a>
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Open menu">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <button class="nav-close" onclick="toggleMobileNav()">✕</button>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="#services">Services <span class="nav-arrow">▾</span></a>
+          <ul><li><a href="visa-applications.html">Visa Applications</a></li><li><a href="immigration-advice.html">Immigration Advice</a></li><li><a href="document-preparation.html">Document Preparation</a></li><li><a href="consultation-support.html">Consultation & Support</a></li></ul>
+        </li>
+        <li><a href="#about">About <span class="nav-arrow">▾</span></a>
+          <ul><li><a href="our-story.html">Our Story</a></li><li><a href="team.html">Team</a></li><li><a href="mission.html">Mission</a></li></ul>
+        </li>
+        <li><a href="#contact">Contact <span class="nav-arrow">▾</span></a>
+          <ul><li><a href="get-in-touch.html">Get in Touch</a></li><li><a href="contact-us.html">Contact Us</a></li><li><a href="locations.html">Locations</a></li><li><a href="support.html">Support</a></li></ul>
+        </li>
+        <li><a href="#study">Study Destinations <span class="nav-arrow">▾</span></a>
+          <ul><li><a href="usa.html">USA</a></li><li><a href="canada.html">Canada</a></li><li><a href="uk.html">UK</a></li><li><a href="australia.html">Australia</a></li><li><a href="malaysia.html">Malaysia</a></li><li><a href="china.html">China</a></li></ul>
+        </li>
+        <li id="authNavItem"><a href="login.html">Sign In</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge">🇲🇾 Study in Malaysia</span>
+      <h1 style="margin-top:12px;">Study in Malaysia</h1>
+      <p>Affordable world-class education, internationally recognized degrees, and a warm multicultural environment — Malaysia is the smart choice for Bangladeshi and international students.</p>
+      <div class="quick-facts">
+        <div class="quick-fact"><div class="quick-fact-icon">🏆</div><div class="quick-fact-label">Top Universities</div><div class="quick-fact-value">UM, UPM, UUM, UKM</div></div>
+        <div class="quick-fact"><div class="quick-fact-icon">👥</div><div class="quick-fact-label">Intl Students</div><div class="quick-fact-value">150,000+</div></div>
+        <div class="quick-fact"><div class="quick-fact-icon">💰</div><div class="quick-fact-label">Avg. Tuition</div><div class="quick-fact-value">MYR 15,000–40,000/yr</div></div>
+        <div class="quick-fact"><div class="quick-fact-icon">🌍</div><div class="quick-fact-label">Language</div><div class="quick-fact-value">English-Medium</div></div>
+      </div>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="apply-now.html" class="btn" style="padding:12px 24px;">Apply to Malaysia →</a>
+        <a href="https://wa.me/601124328920?text=Hi, I'm interested in studying in Malaysia" target="_blank" class="btn btn-outline" style="padding:12px 24px;">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Why Study in Malaysia?</h2>
+        <p style="max-width:60ch;margin:0 auto;">Malaysia has rapidly become one of Asia's most popular study destinations — offering quality education at a fraction of the cost of Western universities.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card"><h3>💰 Affordable World-Class Education</h3><p>Tuition fees at Malaysian universities are significantly lower than in the UK, USA, or Australia — while the quality of education meets international standards. Full degree programs available from MYR 15,000/year.</p></div>
+        <div class="card"><h3>🌐 English as the Medium of Instruction</h3><p>Unlike many non-English-speaking countries, Malaysian universities teach primarily in English. This makes it accessible for Bangladeshi students without needing to learn a new language.</p></div>
+        <div class="card"><h3>🏆 Internationally Recognized Degrees</h3><p>Malaysian universities have partnerships with UK, US, Australian, and Canadian universities. You can earn a degree from a foreign university without leaving Malaysia — at a fraction of the cost.</p></div>
+        <div class="card"><h3>🌏 Diverse & Welcoming Culture</h3><p>Malaysia is a multicultural nation where Malay, Chinese, Indian, and indigenous communities live together harmoniously. International students feel welcomed and at home quickly.</p></div>
+        <div class="card"><h3>🗺️ Strategic Location</h3><p>Located close to Bangladesh, Singapore, Thailand, and Indonesia. Frequent flights, similar food culture, and easy travel make it convenient for Bangladeshi students.</p></div>
+        <div class="card"><h3>💼 Post-Study Opportunities</h3><p>Malaysia offers a Post-Study Work Visa for international graduates. The country is also a growing hub for multinational companies in Southeast Asia.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:rgba(255,255,255,0.02);border-top:1px solid var(--nav-border);border-bottom:1px solid var(--nav-border);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Top Malaysian Universities</h2>
+        <p style="max-width:60ch;margin:0 auto;">Malaysia has both public research universities and private colleges/universities offering internationally accredited programs.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h3>🏛️ Universiti Malaya (UM)</h3><p>Malaysia's oldest and top-ranked university. Best for Medicine, Engineering, Law, Business. QS ranked top 70 globally.</p></div>
+        <div class="card"><h3>🌾 Universiti Putra Malaysia (UPM)</h3><p>Top 250 globally. Best for Agriculture, Biotechnology, Engineering, Food Science, Veterinary Sciences.</p></div>
+        <div class="card"><h3>🏔️ Universiti Kebangsaan Malaysia (UKM)</h3><p>Top 300 globally. Best for Sciences, Engineering, IT, and Social Sciences. Strong research focus.</p></div>
+        <div class="card"><h3>💼 Universiti Teknologi Malaysia (UTM)</h3><p>Best for Engineering, Architecture, and IT. Strong industry partnerships and research output.</p></div>
+        <div class="card"><h3>🏛️ Universiti Utara Malaysia (UUM)</h3><p>Malaysia's foremost business university. AACSB, AMBA & EQUIS accredited business school. Best for Business, Law, IT.</p></div>
+        <div class="card"><h3>🏙️ Universiti Monash Malaysia</h3><p>Campus of Australia's prestigious Monash University. Same degree as studying in Melbourne. Best for Business, Engineering, IT.</p></div>
+        <div class="card"><h3>🏛️ Nottingham Malaysia</h3><p>Campus of UK's University of Nottingham. Same degree as studying in Nottingham, UK. Best for Business, Psychology, Education.</p></div>
+        <div class="card"><h3>🎓 Taylor's University</h3><p>Top private university. Best for Hospitality, Business, Design, and Communication. Strong industry placement record.</p></div>
+        <div class="card"><h3>💻 Universiti Teknologi Malaysia (UTM)</h3><p>Leading technical university. Strong in petroleum engineering, robotics, and renewable energy research.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 style="margin-bottom:24px;">Malaysia Student Pass (Visa) Process</h2>
+      <div class="grid-2" style="gap:40px;">
+        <div>
+          <div class="visa-step"><div class="step-num">1</div><div class="step-content"><h4>Receive Offer Letter & EMGS Approval</h4><p>Apply to a Malaysian university and receive your offer letter. The university will apply for Electronic Migration Services (EMGS) approval on your behalf.</p></div></div>
+          <div class="visa-step"><div class="step-num">2</div><div class="step-content"><h4>Pay EMGS Fees & Health Insurance</h4><p>Pay the EMGS processing fee and mandatory health insurance (OSHIC). This is required before your visa can be issued.</p></div></div>
+          <div class="visa-step"><div class="step-num">3</div><div class="step-content"><h4>Receive Your Student Pass (Visa)</h4><p>Once EMGS approves, your passport will be stamped with the Student Pass (valist pass). Your university will guide you on pickup or delivery.</p></div></div>
+          <div class="visa-step"><div class="step-num">4</div><div class="step-content"><h4>Medical Check-Up in Bangladesh</h4><p>Complete a medical examination at an approved panel clinic before traveling. Results are submitted to EMGS.</p></div></div>
+          <div class="visa-step"><div class="step-num">5</div><div class="step-content"><h4>Travel & Orientation</h4><p>Travel to Malaysia and complete university orientation. Register for your semester and collect your student ID card.</p></div></div>
+        </div>
+        <div>
+          <div class="highlight-box">
+            <h4>📋 Malaysia Student Pass Requirements</h4>
+            <ul style="margin:0;padding-left:18px;">
+              <li>Offer letter from a Malaysian university</li>
+              <li>EMGS approval letter (processed by university)</li>
+              <li>Valid passport (minimum 6 months validity)</li>
+              <li>Medical examination report</li>
+              <li>Overseas Student Health Cover (OSHIC)</li>
+              <li>Proof of funds for living expenses</li>
+              <li>Passport-size photographs</li>
+              <li>Visa fee payment</li>
+            </ul>
+          </div>
+          <div class="highlight-box" style="border-color:rgba(40,167,69,0.4);background:rgba(40,167,69,0.08);">
+            <h4>✅ WorldLink — Official EMGS Partner</h4>
+            <p>WorldLink works directly with EMGS and Malaysian universities to ensure fast, hassle-free student pass applications. We handle everything from university selection to visa stamping.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:rgba(255,255,255,0.02);border-top:1px solid var(--nav-border);border-bottom:1px solid var(--nav-border);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Popular Programs for International Students</h2>
+        <p style="max-width:60ch;margin:0 auto;">Malaysian universities offer a wide variety of programs, particularly strong in business, engineering, and health sciences.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h3>📈 Business & Management</h3><p>Accounting, Finance, Marketing, MBA, Economics. ACCA and CPA recognized. Strong partnerships with UK/Australian universities for credit transfer.</p></div>
+        <div class="card"><h3>⚙️ Engineering</h3><p>Mechanical, Electrical, Civil, Chemical, Petroleum Engineering. UTM and UM are internationally accredited. Growing industry demand.</p></div>
+        <div class="card"><h3>💻 Computer Science & IT</h3><p>Software Engineering, Data Science, AI, Cybersecurity. Malaysia's tech sector is growing rapidly with multinational tech companies setting up offices.</p></div>
+        <div class="card"><h3>🏥 Medicine & Health Sciences</h3><p>MBBS, Nursing, Pharmacy, Dentistry, Public Health. Highly competitive admissions. UM and USM have top medical schools.</p></div>
+        <div class="card"><h3>🌾 Agricultural & Food Sciences</h3><p>Agriculture, Food Science, Biotechnology, Horticulture. UPM is a global leader. Malaysia's tropical agriculture research is world-class.</p></div>
+        <div class="card"><h3>🎯 Aviation & Hospitality</h3><p>Airline Operations, Hotel Management, Tourism Management. Malaysia's aviation and tourism industries are booming.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Estimated Costs to Study in Malaysia</h2>
+        <p style="max-width:60ch;margin:0 auto;">Malaysia is one of the most affordable study destinations in the world. Accommodation, food, and transport are all significantly cheaper than in Western countries.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Item</th><th>Annual Cost (MYR)</th><th>Approx. USD</th></tr></thead>
+          <tbody>
+            <tr><td>Tuition (public university)</td><td>MYR 8,000 – 25,000</td><td>$1,800 – $5,600</td></tr>
+            <tr><td>Tuition (private university)</td><td>MYR 15,000 – 40,000</td><td>$3,300 – $9,000</td></tr>
+            <tr><td>Accommodation (on-campus)</td><td>MYR 1,500 – 4,000/semester</td><td>$340 – $900/sem</td></tr>
+            <tr><td>Living expenses</td><td>MYR 1,000 – 2,000/month</td><td>$220 – $450/month</td></tr>
+            <tr><td>Food & transport</td><td>MYR 600 – 1,200/month</td><td>$135 – $270/month</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="highlight-box" style="margin-top:24px;">
+        <h4>💡 Credit Transfer Programs</h4>
+        <p>Many Malaysian universities offer credit transfer programs with universities in the UK, Australia, Canada, and the US. Start your degree in Malaysia and transfer to a Western university in your second or third year — saving significantly on total tuition costs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="text-align:center;">
+      <h2>Ready to Study in Malaysia?</h2>
+      <p style="max-width:55ch;margin:12px auto 24px;">Malaysia offers the perfect blend of quality, affordability, and accessibility. WorldLink is your official EMGS partner for smooth student pass processing.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="apply-now.html" class="btn" style="padding:14px 28px;">Apply Now →</a>
+        <a href="https://wa.me/601124328920?text=Hi, I want to study in Malaysia" target="_blank" class="btn btn-outline" style="padding:14px 28px;">WhatsApp: +6011 2432 8920</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="whatsapp-float"><a href="https://wa.me/601124328920" target="_blank" style="color:#fff;font-size:1.5rem;">💬</a></div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="logo.pnj.png" alt="WorldLink Logo"><h3>WorldLink Migration & Visa Consultancy</h3><p>Your trusted partner for global migration and study abroad services.</p><div class="footer-buttons"><a href="https://wa.me/601124328920" target="_blank">WhatsApp</a><a href="mailto:enuires.worldlinkmigration@gmail.com">Email</a></div></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="visa-applications.html">Visa Applications</a></li><li><a href="immigration-advice.html">Immigration Advice</a></li><li><a href="document-preparation.html">Document Preparation</a></li><li><a href="consultation-support.html">Consultation & Support</a></li></ul></div>
+      <div class="footer-col"><h4>Destinations</h4><ul><li><a href="usa.html">USA</a></li><li><a href="canada.html">Canada</a></li><li><a href="uk.html">UK</a></li><li><a href="australia.html">Australia</a></li><li><a href="malaysia.html">Malaysia</a></li><li><a href="china.html">China</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="get-in-touch.html">Get in Touch</a></li><li><a href="contact-us.html">Contact Us</a></li><li><a href="locations.html">Locations</a></li><li><a href="support.html">Support</a></li><li><a href="apply-now.html">Apply Now</a></li></ul><p style="margin-top:16px;font-size:0.85rem;">📞 +6011 2432 8920<br>📍 Rajshahi, Bangladesh</p></div>
+    </div>
+    <div class="footer-bottom"><p>Copyright © 2025 WorldLink Migration & Visa Consultancy. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="auth.js"></script>
+<script>
+function toggleMobileNav() { document.getElementById('mainNav').classList.toggle('open'); }
+function updateAuthNav() { const user = getCurrentUser(); const authItem = document.getElementById('authNavItem'); if (!authItem) return; if (user) { authItem.innerHTML = `<a href="#">👤 ${user.username} <span class="nav-arrow">▾</span></a><ul><li><a href="${user.role==='admin'?'admin-panel.html':'user-dashboard.html'}">Dashboard</a></li><li><a href="#" onclick="logout()">Logout</a></li></ul>`; } }
+document.addEventListener('DOMContentLoaded', () => { updateAuthNav(); document.querySelectorAll('.main-nav li a').forEach(link => { if (link.nextElementSibling && link.nextElementSibling.tagName === 'UL') { link.addEventListener('click', e => { if (window.innerWidth <= 768) { e.preventDefault(); link.nextElementSibling.classList.toggle('open'); } }); } }); });
+</script>
+</body>
+</html>

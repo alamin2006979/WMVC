@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="logo.pnj.png" type="image/png">
+  <title>Login - WorldLink Migration & Visa Consultancy</title>
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .auth-wrapper { min-height: calc(100vh - 160px); display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+    .auth-card {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 16px; padding: 40px; width: 100%; max-width: 440px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .auth-card h2 { text-align: center; margin-bottom: 8px; }
+    .auth-card p { text-align: center; margin-bottom: 28px; }
+    .auth-card form { display: flex; flex-direction: column; gap: 16px; }
+    .auth-divider { text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--nav-border); color: var(--muted); font-size: 0.9rem; }
+    .auth-divider a { color: var(--accent); font-weight: 600; }
+    .error-msg { background: rgba(220,53,69,0.15); border: 1px solid rgba(220,53,69,0.3); color: #ff6b6b; padding: 10px 14px; border-radius: 8px; font-size: 0.9rem; display: none; }
+    .admin-hint { background: rgba(108,140,255,0.08); border: 1px solid rgba(108,140,255,0.2); border-radius: 8px; padding: 12px; font-size: 0.85rem; color: var(--muted); margin-top: 16px; }
+    .admin-hint strong { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="main.html" class="brand" aria-label="WorldLink home">
+      <img src="logo.pnj.png" alt="WorldLink Logo">
+      <span class="brand-name">WorldLink Migration & Visa Consultancy</span>
+    </a>
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Open menu">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <button class="nav-close" onclick="toggleMobileNav()">✕</button>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="#services">Services <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="visa-applications.html">Visa Applications</a></li>
+            <li><a href="immigration-advice.html">Immigration Advice</a></li>
+            <li><a href="document-preparation.html">Document Preparation</a></li>
+            <li><a href="consultation-support.html">Consultation & Support</a></li>
+          </ul>
+        </li>
+        <li><a href="#about">About <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="mission.html">Mission</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="get-in-touch.html">Get in Touch</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </li>
+        <li><a href="#study">Study Destinations <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="usa.html">USA</a></li>
+            <li><a href="canada.html">Canada</a></li>
+            <li><a href="uk.html">UK</a></li>
+            <li><a href="australia.html">Australia</a></li>
+            <li><a href="malaysia.html">Malaysia</a></li>
+            <li><a href="china.html">China</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="auth-wrapper">
+    <div class="auth-card">
+      <h2>Welcome Back</h2>
+      <p>Sign in to manage your visa applications and track progress.</p>
+
+      <div id="errorMsg" class="error-msg"></div>
+
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" placeholder="Enter your username" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Enter your password" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn" style="width:100%;padding:14px;font-size:1rem;" id="loginBtn">Sign In →</button>
+      </form>
+
+      <div class="admin-hint">
+        <strong>Admin demo:</strong> Username <code>admin</code> / Password <code>admin123</code>
+      </div>
+
+      <div class="auth-divider">
+        Don't have an account? <a href="register.html">Register here →</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.pnj.png" alt="WorldLink Logo">
+        <h3>WorldLink Migration & Visa Consultancy</h3>
+        <p>Your trusted partner for global migration and study abroad services.</p>
+        <div class="footer-buttons">
+          <a href="https://wa.me/601124328920" target="_blank">WhatsApp</a>
+          <a href="mailto:enuires.worldlinkmigration@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="visa-applications.html">Visa Applications</a></li>
+        <li><a href="immigration-advice.html">Immigration Advice</a></li>
+        <li><a href="document-preparation.html">Document Preparation</a></li>
+        <li><a href="consultation-support.html">Consultation & Support</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Destinations</h4><ul>
+        <li><a href="usa.html">USA</a></li>
+        <li><a href="canada.html">Canada</a></li>
+        <li><a href="uk.html">United Kingdom</a></li>
+        <li><a href="australia.html">Australia</a></li>
+        <li><a href="malaysia.html">Malaysia</a></li>
+        <li><a href="china.html">China</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="get-in-touch.html">Get in Touch</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="apply-now.html">Apply Now</a></li>
+      </ul>
+      <p style="margin-top:16px;font-size:0.85rem;">📞 +6011 2432 8920<br>📍 Rajshahi, Bangladesh</p></div>
+    </div>
+    <div class="footer-bottom"><p>Copyright © 2025 WorldLink Migration & Visa Consultancy. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="auth.js"></script>
+<script>
+function toggleMobileNav() { document.getElementById('mainNav').classList.toggle('open'); }
+
+function handleLogin(e) {
+  e.preventDefault();
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value;
+  const errorMsg = document.getElementById('errorMsg');
+  const btn = document.getElementById('loginBtn');
+
+  errorMsg.style.display = 'none';
+  btn.textContent = 'Signing in…';
+  btn.disabled = true;
+
+  setTimeout(() => {
+    const user = login(username, password);
+    if (user) {
+      const redirect = user.role === 'admin' ? 'admin-panel.html' : 'user-dashboard.html';
+      window.location.href = redirect;
+    } else {
+      errorMsg.textContent = 'Invalid username or password. Please try again.';
+      errorMsg.style.display = 'block';
+      btn.textContent = 'Sign In →';
+      btn.disabled = false;
+    }
+  }, 600);
+}
+
+// Redirect if already logged in
+document.addEventListener('DOMContentLoaded', () => {
+  const user = getCurrentUser();
+  if (user) {
+    window.location.href = user.role === 'admin' ? 'admin-panel.html' : 'user-dashboard.html';
+  }
+});
+</script>
+</body>
+</html>

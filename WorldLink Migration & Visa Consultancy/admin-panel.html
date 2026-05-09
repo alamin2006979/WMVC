@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="logo.pnj.png" type="image/png">
+  <title>Admin Panel - WorldLink Migration & Visa Consultancy</title>
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .admin-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; }
+    .admin-welcome { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px 20px; display: flex; align-items: center; gap: 12px; }
+    .admin-welcome-icon { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #ff4d4d, #6c8cff); display: grid; place-items: center; font-size: 1.2rem; }
+    .admin-welcome h3 { margin: 0 0 2px; font-size: 1.1rem; }
+    .admin-welcome p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+    .admin-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-bottom: 40px; }
+    .admin-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 20px; transition: transform 0.2s; }
+    .admin-card:hover { transform: translateY(-3px); }
+    .admin-card h3 { margin: 0 0 6px; }
+    .admin-card p { margin: 0 0 12px; font-size: 0.9rem; }
+    .admin-card-icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .admin-section { margin-top: 40px; }
+    .admin-section h3 { margin-bottom: 16px; }
+    .status-pill { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; }
+    .status-pending { background: rgba(255,193,7,0.2); color: #ffc107; }
+    .status-approved { background: rgba(40,167,69,0.2); color: #28a745; }
+    .status-rejected { background: rgba(220,53,69,0.2); color: #dc3545; }
+    .action-btn { padding: 6px 12px; border-radius: 6px; border: none; cursor: pointer; font-size: 0.8rem; font-weight: 600; transition: all 0.2s; }
+    .action-approve { background: rgba(40,167,69,0.2); color: #28a745; border: 1px solid rgba(40,167,69,0.3); }
+    .action-approve:hover { background: #28a745; color: #fff; }
+    .action-reject { background: rgba(220,53,69,0.2); color: #dc3545; border: 1px solid rgba(220,53,69,0.3); }
+    .action-reject:hover { background: #dc3545; color: #fff; }
+    .action-view { background: rgba(108,140,255,0.2); color: var(--accent); border: 1px solid rgba(108,140,255,0.3); }
+    .action-view:hover { background: var(--accent); color: #fff; }
+    .no-data { text-align: center; padding: 40px; color: var(--muted); }
+    .search-bar { max-width: 320px; margin-bottom: 16px; }
+    .search-bar input { width: 100%; padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: var(--input-bg); color: var(--text); }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="main.html" class="brand" aria-label="WorldLink home">
+      <img src="logo.pnj.png" alt="WorldLink Logo">
+      <span class="brand-name">WorldLink Migration & Visa Consultancy</span>
+    </a>
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Open menu">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <button class="nav-close" onclick="toggleMobileNav()">✕</button>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="#services">Services <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="visa-applications.html">Visa Applications</a></li>
+            <li><a href="immigration-advice.html">Immigration Advice</a></li>
+            <li><a href="document-preparation.html">Document Preparation</a></li>
+            <li><a href="consultation-support.html">Consultation & Support</a></li>
+          </ul>
+        </li>
+        <li><a href="#about">About <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="mission.html">Mission</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="get-in-touch.html">Get in Touch</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </li>
+        <li><a href="#study">Study Destinations <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="usa.html">USA</a></li>
+            <li><a href="canada.html">Canada</a></li>
+            <li><a href="uk.html">UK</a></li>
+            <li><a href="australia.html">Australia</a></li>
+            <li><a href="malaysia.html">Malaysia</a></li>
+            <li><a href="china.html">China</a></li>
+          </ul>
+        </li>
+        <li id="authNavItem"><a href="user-dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section-sm">
+    <!-- ADMIN HEADER -->
+    <div class="admin-header">
+      <div class="admin-welcome">
+        <div class="admin-welcome-icon">👑</div>
+        <div>
+          <h3 id="adminGreeting">Admin Dashboard</h3>
+          <p>Manage users, applications, and content</p>
+        </div>
+      </div>
+      <div>
+        <a href="#" onclick="logout()" class="btn btn-outline">Logout</a>
+      </div>
+    </div>
+
+    <!-- ADMIN STATS -->
+    <div class="admin-grid">
+      <div class="admin-card">
+        <div class="admin-card-icon">👥</div>
+        <h3>Users</h3>
+        <p>Manage registered user accounts</p>
+        <button onclick="showSection('users')" class="btn btn-outline btn-sm">Manage Users</button>
+      </div>
+      <div class="admin-card">
+        <div class="admin-card-icon">📋</div>
+        <h3>Applications</h3>
+        <p>Review and process visa applications</p>
+        <button onclick="showSection('applications')" class="btn btn-outline btn-sm">View Applications</button>
+      </div>
+      <div class="admin-card">
+        <div class="admin-card-icon">📊</div>
+        <h3>Reports</h3>
+        <p>Generate reports on users and applications</p>
+        <button onclick="generateReport()" class="btn btn-outline btn-sm">Generate Report</button>
+      </div>
+      <div class="admin-card">
+        <div class="admin-card-icon">⚙️</div>
+        <h3>Settings</h3>
+        <p>Manage site settings and configuration</p>
+        <button onclick="alert('Settings panel coming soon!')" class="btn btn-outline btn-sm">Settings</button>
+      </div>
+    </div>
+
+    <!-- USERS TABLE -->
+    <div id="usersSection" class="admin-section" style="display:none;">
+      <h3>Registered Users</h3>
+      <div class="search-bar">
+        <input type="text" id="userSearch" placeholder="Search users…" oninput="filterUsers()">
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th><th>Username</th><th>Email</th><th>Role</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="usersList"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- APPLICATIONS TABLE -->
+    <div id="applicationsSection" class="admin-section" style="display:none;">
+      <h3>Visa Applications</h3>
+      <div class="search-bar">
+        <input type="text" id="appSearch" placeholder="Search applications…" oninput="filterApplications()">
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th><th>Name</th><th>Country</th><th>Course</th><th>Status</th><th>Date</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="applicationsList"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.pnj.png" alt="WorldLink Logo">
+        <h3>WorldLink Migration & Visa Consultancy</h3>
+        <p>Your trusted partner for global migration and study abroad services.</p>
+        <div class="footer-buttons">
+          <a href="https://wa.me/601124328920" target="_blank">WhatsApp</a>
+          <a href="mailto:enuires.worldlinkmigration@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="visa-applications.html">Visa Applications</a></li>
+        <li><a href="immigration-advice.html">Immigration Advice</a></li>
+        <li><a href="document-preparation.html">Document Preparation</a></li>
+        <li><a href="consultation-support.html">Consultation & Support</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Destinations</h4><ul>
+        <li><a href="usa.html">USA</a></li>
+        <li><a href="canada.html">Canada</a></li>
+        <li><a href="uk.html">UK</a></li>
+        <li><a href="australia.html">Australia</a></li>
+        <li><a href="malaysia.html">Malaysia</a></li>
+        <li><a href="china.html">China</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="get-in-touch.html">Get in Touch</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="apply-now.html">Apply Now</a></li>
+      </ul>
+      <p style="margin-top:16px;font-size:0.85rem;">📞 +6011 2432 8920<br>📍 Rajshahi, Bangladesh</p></div>
+    </div>
+    <div class="footer-bottom"><p>Copyright © 2025 WorldLink Migration & Visa Consultancy. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="auth.js"></script>
+<script>
+function toggleMobileNav() { document.getElementById('mainNav').classList.toggle('open'); }
+function updateAuthNav() {
+  const user = getCurrentUser();
+  const authItem = document.getElementById('authNavItem');
+  if (!authItem) return;
+  if (user) {
+    authItem.innerHTML = `<a href="#">👤 ${user.username} <span class="nav-arrow">▾</span></a><ul>
+      <li><a href="${user.role==='admin'?'admin-panel.html':'user-dashboard.html'}">Dashboard</a></li>
+      <li><a href="#" onclick="logout()">Logout</a></li></ul>`;
+    if (user.role === 'admin') {
+      document.getElementById('adminGreeting').textContent = 'Welcome, ' + user.username;
+    }
+  }
+}
+
+function showSection(section) {
+  document.getElementById('usersSection').style.display = 'none';
+  document.getElementById('applicationsSection').style.display = 'none';
+  if (section === 'users') {
+    document.getElementById('usersSection').style.display = 'block';
+    showUsers();
+  } else if (section === 'applications') {
+    document.getElementById('applicationsSection').style.display = 'block';
+    showApplications();
+  }
+}
+
+function showUsers() {
+  const users = JSON.parse(localStorage.getItem('users') || '[]');
+  const tbody = document.getElementById('usersList');
+  tbody.innerHTML = '';
+  users.forEach((user, i) => {
+    tbody.innerHTML += `
+      <tr>
+        <td>${i + 1}</td>
+        <td>${user.username}</td>
+        <td>${user.email}</td>
+        <td><span class="status-pill ${user.role === 'admin' ? 'status-approved' : 'status-pending'}">${user.role}</span></td>
+        <td>
+          ${user.role !== 'admin' ? `<button onclick="deleteUser('${user.username}')" class="action-btn action-reject" style="margin-right:6px;">Delete</button>` : '<span style="color:var(--muted);font-size:0.8rem;">—</span>'}
+        </td>
+      </tr>`;
+  });
+  if (users.length === 0) tbody.innerHTML = '<tr><td colspan="5" class="no-data">No users found.</td></tr>';
+}
+
+function deleteUser(username) {
+  if (!confirm(`Delete user "${username}"? This cannot be undone.`)) return;
+  let users = JSON.parse(localStorage.getItem('users'));
+  users = users.filter(u => u.username !== username);
+  localStorage.setItem('users', JSON.stringify(users));
+  showUsers();
+}
+
+function filterUsers() {
+  const q = document.getElementById('userSearch').value.toLowerCase();
+  const rows = document.querySelectorAll('#usersList tr');
+  rows.forEach(row => {
+    row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+}
+
+function showApplications() {
+  const apps = JSON.parse(localStorage.getItem('applications') || '[]');
+  const tbody = document.getElementById('applicationsList');
+  tbody.innerHTML = '';
+  apps.forEach((app, i) => {
+    const statusClass = app.status === 'approved' ? 'status-approved' : app.status === 'rejected' ? 'status-rejected' : 'status-pending';
+    tbody.innerHTML += `
+      <tr>
+        <td>#${i + 1}</td>
+        <td>${app.firstName} ${app.surname}</td>
+        <td>${app.country}</td>
+        <td>${app.interestedCourse}</td>
+        <td><span class="status-pill ${statusClass}">${app.status}</span></td>
+        <td>${new Date(app.submittedAt).toLocaleDateString()}</td>
+        <td>
+          <button onclick="updateStatus(${i}, 'approved')" class="action-btn action-approve" style="margin-right:6px;">✓ Approve</button>
+          <button onclick="updateStatus(${i}, 'rejected')" class="action-btn action-reject" style="margin-right:6px;">✕ Reject</button>
+          <button onclick="emailApplication(${i})" class="action-btn action-view">✉ Email</button>
+        </td>
+      </tr>`;
+  });
+  if (apps.length === 0) tbody.innerHTML = '<tr><td colspan="7" class="no-data">No applications yet.</td></tr>';
+}
+
+function filterApplications() {
+  const q = document.getElementById('appSearch').value.toLowerCase();
+  document.querySelectorAll('#applicationsList tr').forEach(row => {
+    row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+}
+
+function updateStatus(index, status) {
+  let apps = JSON.parse(localStorage.getItem('applications') || '[]');
+  apps[index].status = status;
+  localStorage.setItem('applications', JSON.stringify(apps));
+  showApplications();
+}
+
+function emailApplication(index) {
+  const apps = JSON.parse(localStorage.getItem('applications') || '[]');
+  const app = apps[index];
+  const subject = encodeURIComponent(`Visa Application Update — ${app.firstName} ${app.surname}`);
+  const body = encodeURIComponent(`Dear ${app.firstName},\n\nYour visa application for ${app.country} (${app.interestedCourse}) status has been updated to: ${app.status}.\n\nBest regards,\nWorldLink Migration & Visa Consultancy`);
+  window.open(`mailto:${app.email || 'enuires.worldlinkmigration@gmail.com'}?subject=${subject}&body=${body}`);
+}
+
+function generateReport() {
+  const users = JSON.parse(localStorage.getItem('users') || '[]');
+  const apps = JSON.parse(localStorage.getItem('applications') || '[]');
+  const report = `
+=== WorldLink Admin Report ===
+Generated: ${new Date().toLocaleString()}
+----------------------------------
+Total Users: ${users.length}
+Total Applications: ${apps.length}
+Approved: ${apps.filter(a => a.status === 'approved').length}
+Pending: ${apps.filter(a => a.status === 'pending').length}
+Rejected: ${apps.filter(a => a.status === 'rejected').length}
+  `.trim();
+  alert(report);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  protectAdminPage();
+  updateAuthNav();
+});
+</script>
+</body>
+</html>

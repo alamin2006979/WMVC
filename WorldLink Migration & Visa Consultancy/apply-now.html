@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="logo.pnj.png" type="image/png">
+  <title>Apply Now - WorldLink Migration & Visa Consultancy</title>
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .page-banner { padding: 50px 0 40px; text-align: center; background: linear-gradient(135deg, rgba(108,140,255,0.12), transparent); border-bottom: 1px solid var(--nav-border); }
+    .page-banner h1 { margin-bottom: 8px; }
+    .page-banner p { max-width: 60ch; margin: 0 auto; }
+    .apply-form-wrap { max-width: 720px; margin: 0 auto; }
+    .form-section { margin-bottom: 24px; }
+    .form-section h3 { margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--nav-border); }
+    .file-upload-area {
+      border: 2px dashed rgba(108,140,255,0.3); border-radius: 12px; padding: 24px; text-align: center;
+      background: rgba(108,140,255,0.04); transition: border-color 0.2s; cursor: pointer;
+    }
+    .file-upload-area:hover { border-color: var(--accent); }
+    .file-upload-area input[type="file"] { display: none; }
+    .file-upload-area label { cursor: pointer; display: block; }
+    .file-upload-area .upload-icon { font-size: 2rem; margin-bottom: 8px; }
+    .file-upload-area p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+    .file-upload-area .file-name { margin-top: 8px; font-weight: 600; color: var(--accent); }
+    .required-note { font-size: 0.8rem; color: var(--muted); margin-bottom: 20px; }
+    .success-banner {
+      background: linear-gradient(135deg, rgba(40,167,69,0.2), rgba(40,167,69,0.1));
+      border: 1px solid rgba(40,167,69,0.3); border-radius: 12px; padding: 32px;
+      text-align: center; display: none;
+    }
+    .success-banner h3 { color: #28a745; margin-bottom: 12px; }
+    .success-banner p { margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="main.html" class="brand" aria-label="WorldLink home">
+      <img src="logo.pnj.png" alt="WorldLink Logo">
+      <span class="brand-name">WorldLink Migration & Visa Consultancy</span>
+    </a>
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Open menu">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <button class="nav-close" onclick="toggleMobileNav()">✕</button>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="#services">Services <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="visa-applications.html">Visa Applications</a></li>
+            <li><a href="immigration-advice.html">Immigration Advice</a></li>
+            <li><a href="document-preparation.html">Document Preparation</a></li>
+            <li><a href="consultation-support.html">Consultation & Support</a></li>
+          </ul>
+        </li>
+        <li><a href="#about">About <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="mission.html">Mission</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="get-in-touch.html">Get in Touch</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </li>
+        <li><a href="#study">Study Destinations <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="usa.html">USA</a></li>
+            <li><a href="canada.html">Canada</a></li>
+            <li><a href="uk.html">UK</a></li>
+            <li><a href="australia.html">Australia</a></li>
+            <li><a href="malaysia.html">Malaysia</a></li>
+            <li><a href="china.html">China</a></li>
+          </ul>
+        </li>
+        <li id="authNavItem"><a href="login.html">Sign In</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- PAGE BANNER -->
+  <section class="page-banner">
+    <div class="container">
+      <span class="badge">📝 Apply Online</span>
+      <h1 style="margin-top:12px;">Apply Now</h1>
+      <p>Fill out the form below to submit your visa or study abroad application. Our team will review your details and contact you within 24–48 hours.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container apply-form-wrap">
+      <!-- SUCCESS BANNER -->
+      <div class="success-banner" id="successBanner">
+        <h3>✅ Application Submitted!</h3>
+        <p>Thank you! Your application has been received. Our consultants will review your details and contact you at your provided WhatsApp or email within 24–48 hours.</p>
+        <a href="main.html" class="btn">Back to Home</a>
+      </div>
+
+      <!-- MAIN FORM -->
+      <form id="applicationForm" onsubmit="handleApplicationSubmit(event)">
+        <!-- PERSONAL INFO -->
+        <div class="form-section card">
+          <h3>👤 Personal Information</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input id="firstName" name="firstName" type="text" placeholder="Your first name" required>
+            </div>
+            <div class="form-group">
+              <label for="surname">Surname *</label>
+              <input id="surname" name="surname" type="text" placeholder="Your surname" required>
+            </div>
+            <div class="form-group">
+              <label for="dob">Date of Birth *</label>
+              <input id="dob" name="dob" type="date" required>
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender *</label>
+              <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input id="email" name="email" type="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="whatsapp">WhatsApp Number *</label>
+              <input id="whatsapp" name="whatsapp" type="tel" placeholder="+601124328920" required>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACADEMIC INFO -->
+        <div class="form-section card" style="margin-top:20px;">
+          <h3>🎓 Academic Background</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="qualification">Highest Qualification *</label>
+              <input id="qualification" name="qualification" type="text" placeholder="e.g., Bachelor's Degree in Engineering" required>
+            </div>
+            <div class="form-group">
+              <label for="englishProficiency">English Proficiency *</label>
+              <select id="englishProficiency" name="englishProficiency" required>
+                <option value="">Select Level</option>
+                <option value="ielts">IELTS</option>
+                <option value="toefl">TOEFL</option>
+                <option value="pte">PTE</option>
+                <option value="muet">MUET</option>
+                <option value="native">Native Speaker</option>
+                <option value="none">No Formal Test</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="interestedCourse">Interested Course / Program *</label>
+              <input id="interestedCourse" name="interestedCourse" type="text" placeholder="e.g., BSc Computer Science, MBA, PhD in Economics" required>
+            </div>
+          </div>
+        </div>
+
+        <!-- DESTINATION -->
+        <div class="form-section card" style="margin-top:20px;">
+          <h3>🌍 Study Destination & University</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="country">Country *</label>
+              <select id="country" name="country" required onchange="updateUniversities()">
+                <option value="">Select Country</option>
+                <option value="usa">🇺🇸 USA</option>
+                <option value="canada">🇨🇦 Canada</option>
+                <option value="uk">🇬🇧 United Kingdom</option>
+                <option value="australia">🇦🇺 Australia</option>
+                <option value="malaysia">🇲🇾 Malaysia</option>
+                <option value="china">🇨🇳 China</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="university">Preferred University *</label>
+              <input id="university" name="university" type="text" placeholder="e.g., Harvard University, UPM, Oxford" required list="universityList">
+              <datalist id="universityList">
+                <option value="Universiti Putra Malaysia (UPM)">
+                <option value="Universiti Utara Malaysia (UUM)">
+                <option value="Harvard University">
+                <option value="MIT">
+                <option value="Stanford University">
+                <option value="University of Toronto">
+                <option value="University of British Columbia">
+                <option value="University of Oxford">
+                <option value="University of Cambridge">
+                <option value="University of Melbourne">
+                <option value="Australian National University">
+                <option value="Peking University">
+                <option value="Tsinghua University">
+              </datalist>
+            </div>
+          </div>
+        </div>
+
+        <!-- DOCUMENTS -->
+        <div class="form-section card" style="margin-top:20px;">
+          <h3>📎 Required Documents</h3>
+          <p class="required-note">* Accepted formats: PDF, JPG, PNG. Max file size: 5MB each.</p>
+          <div class="grid-3" style="gap: 16px;">
+            <div>
+              <label class="file-upload-area" for="certFile">
+                <input type="file" id="certFile" name="certificateTranscript" accept=".pdf,.jpg,.jpeg,.png" onchange="updateFileName('certFile', 'certName')">
+                <div class="upload-icon">🎓</div>
+                <p>Certificate / Transcript *</p>
+                <div class="file-name" id="certName">Click to upload</div>
+              </label>
+            </div>
+            <div>
+              <label class="file-upload-area" for="passportFile">
+                <input type="file" id="passportFile" name="passportFirstPage" accept=".pdf,.jpg,.jpeg,.png" onchange="updateFileName('passportFile', 'passportName')">
+                <div class="upload-icon">🛂</div>
+                <p>Passport First Page *</p>
+                <div class="file-name" id="passportName">Click to upload</div>
+              </label>
+            </div>
+            <div>
+              <label class="file-upload-area" for="photoFile">
+                <input type="file" id="photoFile" name="photo" accept=".jpg,.jpeg,.png" onchange="updateFileName('photoFile', 'photoName')">
+                <div class="upload-icon">📸</div>
+                <p>Passport-size Photo *</p>
+                <div class="file-name" id="photoName">Click to upload</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBMIT -->
+        <div style="margin-top: 24px; text-align: center;">
+          <button type="submit" class="btn" id="submitBtn" style="padding: 16px 40px; font-size: 1rem;">
+            Submit Application →
+          </button>
+          <p style="margin-top: 12px; font-size: 0.85rem; color: var(--muted);">
+            By submitting, you agree to our <a href="main.html">Terms of Service</a> and consent to being contacted by our team.
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.pnj.png" alt="WorldLink Logo">
+        <h3>WorldLink Migration & Visa Consultancy</h3>
+        <p>Your trusted partner for global migration and study abroad services.</p>
+        <div class="footer-buttons">
+          <a href="https://wa.me/601124328920" target="_blank">WhatsApp</a>
+          <a href="mailto:enuires.worldlinkmigration@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="visa-applications.html">Visa Applications</a></li>
+        <li><a href="immigration-advice.html">Immigration Advice</a></li>
+        <li><a href="document-preparation.html">Document Preparation</a></li>
+        <li><a href="consultation-support.html">Consultation & Support</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Destinations</h4><ul>
+        <li><a href="usa.html">USA</a></li>
+        <li><a href="canada.html">Canada</a></li>
+        <li><a href="uk.html">UK</a></li>
+        <li><a href="australia.html">Australia</a></li>
+        <li><a href="malaysia.html">Malaysia</a></li>
+        <li><a href="china.html">China</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="get-in-touch.html">Get in Touch</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="apply-now.html">Apply Now</a></li>
+      </ul>
+      <p style="margin-top:16px;font-size:0.85rem;">📞 +6011 2432 8920<br>📍 Rajshahi, Bangladesh</p></div>
+    </div>
+    <div class="footer-bottom"><p>Copyright © 2025 WorldLink Migration & Visa Consultancy. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="auth.js"></script>
+<script>
+function toggleMobileNav() { document.getElementById('mainNav').classList.toggle('open'); }
+
+function updateAuthNav() {
+  const user = getCurrentUser();
+  const authItem = document.getElementById('authNavItem');
+  if (!authItem) return;
+  if (user) {
+    authItem.innerHTML = `<a href="#">👤 ${user.username} <span class="nav-arrow">▾</span></a><ul>
+      <li><a href="${user.role==='admin'?'admin-panel.html':'user-dashboard.html'}">Dashboard</a></li>
+      <li><a href="#" onclick="logout()">Logout</a></li></ul>`;
+  }
+}
+
+function updateFileName(inputId, displayId) {
+  const file = document.getElementById(inputId).files[0];
+  document.getElementById(displayId).textContent = file ? file.name : 'Click to upload';
+}
+
+function updateUniversities() {
+  // Could be expanded to load universities per country
+}
+
+function handleApplicationSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
+  const user = getCurrentUser();
+
+  const appData = {
+    userId: user ? user.username : 'guest',
+    firstName: formData.get('firstName'),
+    surname: formData.get('surname'),
+    dob: formData.get('dob'),
+    gender: formData.get('gender'),
+    email: formData.get('email'),
+    whatsapp: formData.get('whatsapp'),
+    qualification: formData.get('qualification'),
+    englishProficiency: formData.get('englishProficiency'),
+    interestedCourse: formData.get('interestedCourse'),
+    country: formData.get('country'),
+    university: formData.get('university'),
+    certificateTranscript: formData.get('certificateTranscript') ? formData.get('certificateTranscript').name : null,
+    passportFirstPage: formData.get('passportFirstPage') ? formData.get('passportFirstPage').name : null,
+    photo: formData.get('photo') ? formData.get('photo').name : null,
+    submittedAt: new Date().toISOString(),
+    status: 'pending'
+  };
+
+  // Store in localStorage
+  const applications = JSON.parse(localStorage.getItem('applications') || '[]');
+  applications.push(appData);
+  localStorage.setItem('applications', JSON.stringify(applications));
+
+  // Try server (if available)
+  const fd = new FormData();
+  Object.keys(appData).forEach(k => fd.append(k, appData[k]));
+  ['certificateTranscript', 'passportFirstPage', 'photo'].forEach(f => {
+    if (form[f].files[0]) fd.append(f, form[f].files[0]);
+  });
+
+  const btn = document.getElementById('submitBtn');
+  btn.textContent = 'Submitting…';
+  btn.disabled = true;
+
+  fetch('http://localhost:8000/submit-application', { method: 'POST', body: fd })
+    .then(r => r.json())
+    .then(() => {})
+    .catch(() => {});
+
+  setTimeout(() => {
+    document.getElementById('successBanner').style.display = 'block';
+    form.style.display = 'none';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 800);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateAuthNav();
+});
+</script>
+</body>
+</html>

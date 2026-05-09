@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study in USA - WorldLink Migration & Visa Consultancy</title>
+  <link rel="icon" href="logo.pnj.png" type="image/png">
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, rgba(108,140,255,0.18), rgba(0,50,100,0.4));
+      border-bottom: 1px solid var(--nav-border); padding: 60px 0 40px; text-align: center;
+    }
+    .page-hero h1 { margin-bottom: 12px; }
+    .page-hero p { max-width: 65ch; margin: 0 auto; font-size: 1.05rem; }
+    .quick-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin: 28px auto; max-width: 780px; }
+    .quick-fact { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px; text-align: center; }
+    .quick-fact-icon { font-size: 1.6rem; margin-bottom: 6px; }
+    .quick-fact-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .quick-fact-value { font-size: 1rem; font-weight: 700; margin-top: 4px; color: var(--accent); }
+    .visa-step { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+    .step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 800; flex-shrink: 0; font-size: 0.95rem; }
+    .step-content h4 { margin: 0 0 4px; }
+    .step-content p { margin: 0; font-size: 0.9rem; }
+    .highlight-box { padding: 20px 24px; border-radius: 12px; background: rgba(108,140,255,0.08); border: 1px solid rgba(108,140,255,0.2); border-left: 4px solid var(--accent); margin: 24px 0; }
+    .highlight-box h4 { margin: 0 0 8px; color: var(--accent); }
+    .highlight-box p { margin: 0; }
+    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 90; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: grid; place-items: center; font-size: 1.5rem; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.2s; }
+    .whatsapp-float:hover { transform: scale(1.1); }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="main.html" class="brand"><img src="logo.pnj.png" alt="WorldLink Logo"><span class="brand-name">WorldLink Migration & Visa Consultancy</span></a>
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Open menu">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <button class="nav-close" onclick="toggleMobileNav()">✕</button>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="#services">Services <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="visa-applications.html">Visa Applications</a></li>
+            <li><a href="immigration-advice.html">Immigration Advice</a></li>
+            <li><a href="document-preparation.html">Document Preparation</a></li>
+            <li><a href="consultation-support.html">Consultation & Support</a></li>
+          </ul>
+        </li>
+        <li><a href="#about">About <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="mission.html">Mission</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="get-in-touch.html">Get in Touch</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </li>
+        <li><a href="#study">Study Destinations <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="usa.html">USA</a></li>
+            <li><a href="canada.html">Canada</a></li>
+            <li><a href="uk.html">UK</a></li>
+            <li><a href="australia.html">Australia</a></li>
+            <li><a href="malaysia.html">Malaysia</a></li>
+            <li><a href="china.html">China</a></li>
+          </ul>
+        </li>
+        <li id="authNavItem"><a href="login.html">Sign In</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge">🇺🇸 Study in the United States</span>
+      <h1 style="margin-top:12px;">Study in the USA</h1>
+      <p>World-class education, globally recognized degrees, and unlimited opportunities. The USA welcomes over 1 million international students every year.</p>
+      <div class="quick-facts">
+        <div class="quick-fact"><div class="quick-fact-icon">🏆</div><div class="quick-fact-label">Top Universities</div><div class="quick-fact-value">MIT, Harvard, Stanford</div></div>
+        <div class="quick-fact"><div class="quick-fact-icon">👥</div><div class="quick-fact-label">Intl Students</div><div class="quick-fact-value">1M+ per year</div></div>
+        <div class="quick-fact"><div class="quick-fact-icon">💰</div><div class="quick-fact-label">Avg. Tuition</div><div class="quick-fact-value">$20,000–$55,000/yr</div></div>
+        <div class="quick-fact"><div class="quick-fact-icon">📅</div><div class="quick-fact-label">Post-Study</div><div class="quick-fact-value">OPT up to 3 yrs</div></div>
+      </div>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="apply-now.html" class="btn" style="padding:12px 24px;">Apply to USA →</a>
+        <a href="https://wa.me/601124328920?text=Hi, I'm interested in studying in the USA" target="_blank" class="btn btn-outline" style="padding:12px 24px;">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY USA -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Why Study in the USA?</h2>
+        <p style="max-width:60ch;margin:0 auto;">The USA is the #1 destination for international students globally. Here's why thousands choose America every year.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>🎓 World-Ranked Universities</h3>
+          <p>The USA has more universities in the global top 100 than any other country. Degrees are recognized and valued by employers worldwide.</p>
+        </div>
+        <div class="card">
+          <h3>💼 OPT & Work Opportunities</h3>
+          <p>F-1 student visa holders can work on-campus and apply for Optional Practical Training (OPT) — up to 12 months of work experience after graduation. STEM graduates can extend OPT for up to 24 months.</p>
+        </div>
+        <div class="card">
+          <h3>🔬 Research & Innovation</h3>
+          <p>American universities lead global research in AI, biotechnology, medicine, engineering, and space science. World-class labs and abundant research funding.</p>
+        </div>
+        <div class="card">
+          <h3>🌎 Diversity of Programs</h3>
+          <p>From Ivy League business schools to state universities offering vocational training — the USA has a program for every academic and career goal.</p>
+        </div>
+        <div class="card">
+          <h3>🏙️ Campus Life & Culture</h3>
+          <p>Experience diverse campus communities, fraternities and sororities, NCAA sports, clubs, and a vibrant social scene in cities and college towns across 50 states.</p>
+        </div>
+        <div class="card">
+          <h3>📊 Generous Scholarships</h3>
+          <p>American universities offer merit-based and need-based scholarships for international students. Many provide full tuition waivers for outstanding academic profiles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR UNIVERSITIES -->
+  <section class="section" style="background:rgba(255,255,255,0.02);border-top:1px solid var(--nav-border);border-bottom:1px solid var(--nav-border);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Top Universities for International Students</h2>
+        <p style="max-width:60ch;margin:0 auto;">These American universities are among the most popular choices for international students.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h3>🏛️ Harvard University</h3><p>Ivy League, #1 globally. Business, Law, Medicine, Arts. Need-blind admissions, $75K+ avg. financial aid.</p></div>
+        <div class="card"><h3>🔬 MIT</h3><p>World's #2 in Engineering & Science. Strong entrepreneurship ecosystem. Generous need-based aid.</p></div>
+        <div class="card"><h3>💻 Stanford University</h3><p>Silicon Valley's university. Best for CS, AI, Business. Strong startup & venture capital culture.</p></div>
+        <div class="card"><h3>📈 Columbia University</h3><p>Ivy League in New York City. Finance, Journalism, International Relations. Urban campus life.</p></div>
+        <div class="card"><h3>⚙️ UC Berkeley</h3><p>Top public university. Engineering, CS, Business. Strong research output and diverse community.</p></div>
+        <div class="card"><h3>🎓 NYU</h3><p>Global campuses in Abu Dhabi & Shanghai. Arts, Business, Law. Strong in data science & finance.</p></div>
+        <div class="card"><h3>🏥 Johns Hopkins</h3><p>World's top Medical School & Public Health. Best for medicine, nursing, and biomedical research.</p></div>
+        <div class="card"><h3>📐 Carnegie Mellon</h3><p>Leader in CS, Robotics, Engineering. Strong industry partnerships with Google, Apple, Boeing.</p></div>
+        <div class="card"><h3>🏛️ University of Chicago</h3><p>Elite research university. Best for Economics, Business, Law, and Physics. Rigorous academics.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISA PROCESS -->
+  <section class="section">
+    <div class="container">
+      <h2 style="margin-bottom:24px;">F-1 Student Visa Process</h2>
+      <div class="grid-2" style="gap:40px;">
+        <div>
+          <div class="visa-step">
+            <div class="step-num">1</div>
+            <div class="step-content"><h4>Get Accepted by a SEVP-Approved University</h4><p>Apply to universities and receive your I-20 form (Certificate of Eligibility) from the school after being accepted.</p></div>
+          </div>
+          <div class="visa-step">
+            <div class="step-num">2</div>
+            <div class="step-content"><h4>Pay the SEVIS Fee</h4><p>Pay the I-901 SEVIS fee ($350) to the US Immigration & Customs Enforcement website before your visa interview.</p></div>
+          </div>
+          <div class="visa-step">
+            <div class="step-num">3</div>
+            <div class="step-content"><h4>Complete the DS-160 Form</h4><p>Fill out the Online Nonimmigrant Visa Application (DS-160) on the US Embassy website. Keep your confirmation number.</p></div>
+          </div>
+          <div class="visa-step">
+            <div class="step-num">4</div>
+            <div class="step-content"><h4>Schedule Your Visa Interview</h4><p>Book an appointment at the US Embassy in Dhaka. Interview wait times vary — book early!</p></div>
+          </div>
+          <div class="visa-step">
+            <div class="step-num">5</div>
+            <div class="step-content"><h4>Attend the Visa Interview</h4><p>Bring all required documents. Be honest, confident, and clear about your intent to study and return home.</p></div>
+          </div>
+        </div>
+        <div>
+          <div class="highlight-box">
+            <h4>📋 Required Documents for F-1 Visa</h4>
+            <ul style="margin:0;padding-left:18px;">
+              <li>Valid passport (min. 6 months)</li>
+              <li>DS-160 confirmation page</li>
+              <li>I-20 form from your university</li>
+              <li>SEVIS fee receipt</li>
+              <li>Visa application fee receipt</li>
+              <li>Passport-size photograph</li>
+              <li>Academic transcripts & certificates</li>
+              <li>English test scores (IELTS/TOEFL)</li>
+              <li>Proof of financial support ($20,000–$50,000/yr)</li>
+              <li>Interview appointment letter</li>
+            </ul>
+          </div>
+          <div class="highlight-box" style="border-color:rgba(40,167,69,0.4);background:rgba(40,167,69,0.08);">
+            <h4>✅ Proof of Financial Support</h4>
+            <p>You must demonstrate ability to pay tuition + living expenses. Accepted documents: bank statements, scholarship letters, sponsor affidavits, or a combination thereof.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR COURSES -->
+  <section class="section" style="background:rgba(255,255,255,0.02);border-top:1px solid var(--nav-border);border-bottom:1px solid var(--nav-border);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Popular Programs for International Students</h2>
+        <p style="max-width:60ch;margin:0 auto;">These are the most in-demand degree programs among international students in the USA.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h3>💻 Computer Science & AI</h3><p>CS, AI/ML, Data Science, Cybersecurity. Highest OPT employment rates. Top employers: Google, Microsoft, Apple, Amazon.</p></div>
+        <div class="card"><h3>📈 MBA / Business</h3><p>Full-time MBA, Executive MBA, Specialized Master's. Top schools: Harvard, Stanford, Wharton, Kellogg, Columbia.</p></div>
+        <div class="card"><h3>🔬 Engineering</h3><p>Mechanical, Electrical, Civil, Chemical, Aerospace. OPT-eligible. Research funding widely available.</p></div>
+        <div class="card"><h3>🏥 Medicine & Health Sciences</h3><p>MD, Public Health, Nursing, Pharmacy. Competitive admissions. High earning potential post-graduation.</p></div>
+        <div class="card"><h3>📺 Communications & Media</h3><p>Journalism, Film, Digital Media, Communications. Strong creative industry links in LA and NYC.</p></div>
+        <div class="card"><h3>📊 Economics & Finance</h3><p>Economics, Finance, Accounting. CFA & CPA exam preparation. Strong on Wall Street recruiting.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHOLARSHIPS -->
+  <section class="section">
+    <div class="container">
+      <h2 style="margin-bottom:20px;">Scholarships & Financial Aid</h2>
+      <div class="grid-2" style="gap:24px;">
+        <div class="card">
+          <h3>🎓 University Scholarships</h3>
+          <ul class="icon-list">
+            <li><strong>Harvard Financial Aid:</strong> Need-blind, avg. aid $60K/year</li>
+            <li><strong>MIT Scholarships:</strong> Full need-based aid, no loans</li>
+            <li><strong>Fulbright Program:</strong> Full scholarships for graduate students</li>
+            <li><strong>HubSpot Scholarships:</strong> $5K–$20K for CS students</li>
+            <li><strong>University-specific merit scholarships:</strong> Up to full tuition waiver</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>🏦 External Scholarships</h3>
+          <ul class="icon-list">
+            <li><strong>Aga Khan Foundation:</strong> For Muslim students from developing countries</li>
+            <li><strong>Joint Japan/World Bank:</strong> Graduate scholarships for developing nations</li>
+            <li><strong>Chevening (UK govt):</strong> For graduate study in the US</li>
+            <li><strong>Inlaks Shivderi:</strong> For Indian students (subset can apply to US)</li>
+            <li><strong>Commonwealth Scholarship:</strong> For Commonwealth country nationals</li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin-top:24px;">
+        <h4>💡 WorldLink Can Help</h4>
+        <p>Our consultants assist with scholarship research, application guidance, and financial document preparation for US university admissions and visa applications.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COSTS -->
+  <section class="section" style="background:rgba(255,255,255,0.02);border-top:1px solid var(--nav-border);border-bottom:1px solid var(--nav-border);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Estimated Costs to Study in the USA</h2>
+        <p style="max-width:60ch;margin:0 auto;">Costs vary significantly by university type and location. Here's a general breakdown.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Category</th><th>Public University</th><th>Private University</th><th>Ivy League / Elite</th></tr></thead>
+          <tbody>
+            <tr><td>Tuition (per year)</td><td>$20,000 – $35,000</td><td>$35,000 – $50,000</td><td>$50,000 – $60,000</td></tr>
+            <tr><td>Living Expenses</td><td>$10,000 – $15,000</td><td>$12,000 – $20,000</td><td>$15,000 – $25,000</td></tr>
+            <tr><td>Health Insurance</td><td>$1,500 – $3,000</td><td>$2,000 – $4,000</td><td>$2,000 – $5,000</td></tr>
+            <tr><td>Books & Supplies</td><td>$800 – $1,500</td><td>$800 – $1,500</td><td>$1,000 – $2,000</td></tr>
+            <tr><td><strong>Total (per year)</strong></td><td><strong>$32,000 – $55,000</strong></td><td><strong>$48,000 – $75,000</strong></td><td><strong>$68,000 – $92,000</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container" style="text-align:center;">
+      <h2>Ready to Study in the USA?</h2>
+      <p style="max-width:55ch;margin:12px auto 24px;">WorldLink has helped hundreds of students secure F-1 visas and gain admission to top American universities. Let us guide you every step of the way.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="apply-now.html" class="btn" style="padding:14px 28px;">Apply Now →</a>
+        <a href="https://wa.me/601124328920?text=Hi, I want to study in the USA" target="_blank" class="btn btn-outline" style="padding:14px 28px;">WhatsApp: +6011 2432 8920</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="whatsapp-float"><a href="https://wa.me/601124328920" target="_blank" style="color:#fff;font-size:1.5rem;">💬</a></div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="logo.pnj.png" alt="WorldLink Logo"><h3>WorldLink Migration & Visa Consultancy</h3><p>Your trusted partner for global migration and study abroad services.</p><div class="footer-buttons"><a href="https://wa.me/601124328920" target="_blank">WhatsApp</a><a href="mailto:enuires.worldlinkmigration@gmail.com">Email</a></div></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="visa-applications.html">Visa Applications</a></li><li><a href="immigration-advice.html">Immigration Advice</a></li><li><a href="document-preparation.html">Document Preparation</a></li><li><a href="consultation-support.html">Consultation & Support</a></li></ul></div>
+      <div class="footer-col"><h4>Destinations</h4><ul><li><a href="usa.html">USA</a></li><li><a href="canada.html">Canada</a></li><li><a href="uk.html">UK</a></li><li><a href="australia.html">Australia</a></li><li><a href="malaysia.html">Malaysia</a></li><li><a href="china.html">China</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="get-in-touch.html">Get in Touch</a></li><li><a href="contact-us.html">Contact Us</a></li><li><a href="locations.html">Locations</a></li><li><a href="support.html">Support</a></li><li><a href="apply-now.html">Apply Now</a></li></ul><p style="margin-top:16px;font-size:0.85rem;">📞 +6011 2432 8920<br>📍 Rajshahi, Bangladesh</p></div>
+    </div>
+    <div class="footer-bottom"><p>Copyright © 2025 WorldLink Migration & Visa Consultancy. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="auth.js"></script>
+<script>
+function toggleMobileNav() { document.getElementById('mainNav').classList.toggle('open'); }
+function updateAuthNav() { const user = getCurrentUser(); const authItem = document.getElementById('authNavItem'); if (!authItem) return; if (user) { authItem.innerHTML = `<a href="#">👤 ${user.username} <span class="nav-arrow">▾</span></a><ul><li><a href="${user.role==='admin'?'admin-panel.html':'user-dashboard.html'}">Dashboard</a></li><li><a href="#" onclick="logout()">Logout</a></li></ul>`; } }
+document.addEventListener('DOMContentLoaded', () => { updateAuthNav(); document.querySelectorAll('.main-nav li a').forEach(link => { if (link.nextElementSibling && link.nextElementSibling.tagName === 'UL') { link.addEventListener('click', e => { if (window.innerWidth <= 768) { e.preventDefault(); link.nextElementSibling.classList.toggle('open'); } }); } }); });
+</script>
+</body>
+</html>

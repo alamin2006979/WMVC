@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="logo.pnj.png" type="image/png">
+  <title>Universiti Utara Malaysia (UUM) - WorldLink Migration & Visa Consultancy</title>
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .uni-hero {
+      background: linear-gradient(135deg, rgba(108,140,255,0.15), rgba(20,26,42,0.95));
+      border-bottom: 1px solid var(--nav-border);
+      padding: 60px 0 40px; text-align: center;
+    }
+    .uni-hero h1 { margin-bottom: 12px; }
+    .uni-hero p { max-width: 65ch; margin: 0 auto; font-size: 1.05rem; }
+    .uni-quick-facts {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;
+      margin: 30px auto; max-width: 800px;
+    }
+    .quick-fact {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 12px; padding: 16px; text-align: center;
+    }
+    .quick-fact-icon { font-size: 1.6rem; margin-bottom: 6px; }
+    .quick-fact-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .quick-fact-value { font-size: 1.05rem; font-weight: 700; margin-top: 4px; color: var(--accent); }
+    .course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .course-card {
+      background: var(--card); border: 1px solid var(--card-border); border-radius: 12px;
+      padding: 20px; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .course-card:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,0.3); }
+    .course-card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .course-card p { margin: 0 0 12px; font-size: 0.9rem; }
+    .course-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .tag {
+      padding: 4px 10px; border-radius: 999px; font-size: 0.75rem;
+      background: rgba(108,140,255,0.15); border: 1px solid rgba(108,140,255,0.25); color: var(--accent);
+    }
+    .fee-table-wrap { overflow-x: auto; border-radius: var(--radius); }
+    .req-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .req-list li {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 16px; background: var(--card); border-radius: 10px;
+      border: 1px solid var(--card-border);
+    }
+    .req-icon { width: 32px; height: 32px; border-radius: 8px; background: rgba(108,140,255,0.2); display: grid; place-items: center; font-size: 0.9rem; flex-shrink: 0; }
+    .scholarship-card { background: linear-gradient(135deg, rgba(108,140,255,0.12), rgba(108,255,200,0.06)); border: 1px solid rgba(108,140,255,0.2); border-radius: 16px; padding: 28px; }
+    .scholarship-card h3 { margin-bottom: 16px; }
+    .cta-sticky {
+      position: fixed; bottom: 20px; right: 20px; z-index: 90;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .whatsapp-float {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: #25D366; display: grid; place-items: center;
+      font-size: 1.5rem; box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: transform 0.2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .highlight-box { padding: 20px 24px; border-radius: 12px; background: rgba(108,140,255,0.08); border: 1px solid rgba(108,140,255,0.2); border-left: 4px solid var(--accent); margin: 24px 0; }
+    .highlight-box h4 { margin: 0 0 8px; color: var(--accent); }
+    .highlight-box p { margin: 0; }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="main.html" class="brand" aria-label="WorldLink home">
+      <img src="logo.pnj.png" alt="WorldLink Logo">
+      <span class="brand-name">WorldLink Migration & Visa Consultancy</span>
+    </a>
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Open menu">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <button class="nav-close" onclick="toggleMobileNav()">✕</button>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="#services">Services <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="visa-applications.html">Visa Applications</a></li>
+            <li><a href="immigration-advice.html">Immigration Advice</a></li>
+            <li><a href="document-preparation.html">Document Preparation</a></li>
+            <li><a href="consultation-support.html">Consultation & Support</a></li>
+          </ul>
+        </li>
+        <li><a href="#about">About <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="mission.html">Mission</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="get-in-touch.html">Get in Touch</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </li>
+        <li><a href="#study">Study Destinations <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="malaysia.html">Malaysia</a></li>
+            <li><a href="universiti-putra-malaysia.html">UPM</a></li>
+            <li><a href="universiti-utara-malaysia.html">UUM</a></li>
+          </ul>
+        </li>
+        <li id="authNavItem"><a href="login.html">Sign In</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ===== PAGE HERO ===== -->
+  <section class="uni-hero">
+    <div class="container">
+      <span class="badge">🇲🇾 Malaysia — Business & Management University</span>
+      <h1 style="margin-top:12px;">Universiti Utara Malaysia (UUM)</h1>
+      <p>Malaysia's foremost university for business, management, and social sciences. Located in the peaceful highlands of Sintok, Kedah, UUM offers a unique learning environment with world-class facilities.</p>
+      <div class="uni-quick-facts">
+        <div class="quick-fact">
+          <div class="quick-fact-icon">🏆</div>
+          <div class="quick-fact-label">World Rank</div>
+          <div class="quick-fact-value">#601–650 (QS 2024)</div>
+        </div>
+        <div class="quick-fact">
+          <div class="quick-fact-icon">📍</div>
+          <div class="quick-fact-label">Campus</div>
+          <div class="quick-fact-value">Sintok, Kedah</div>
+        </div>
+        <div class="quick-fact">
+          <div class="quick-fact-icon">🎓</div>
+          <div class="quick-fact-label">Established</div>
+          <div class="quick-fact-value">1984</div>
+        </div>
+        <div class="quick-fact">
+          <div class="quick-fact-icon">👥</div>
+          <div class="quick-fact-label">Intl Students</div>
+          <div class="quick-fact-value">3,000+</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px;">
+        <a href="apply-now.html" class="btn" style="padding:12px 24px;">Apply to UUM →</a>
+        <a href="https://wa.me/601124328920?text=Hi, I'm interested in studying at UUM (Universiti Utara Malaysia)" target="_blank" class="btn btn-outline" style="padding:12px 24px;">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT UUM ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="align-items:center;gap:50px;">
+        <div>
+          <h2>About Universiti Utara Malaysia</h2>
+          <p>Universiti Utara Malaysia (UUM) was established in 1984 as the Northern University of Malaysia. It is located in Sintok, Kedah — a serene region in the northern part of Peninsular Malaysia, near the border with Perlis and Thailand. The campus sits on a 1,061-hectare site surrounded by hills and natural forest, providing a calm and conducive environment for academic pursuit.</p>
+          <p>UUM is the premier university in Malaysia specializing in business, management, economics, law, and social sciences. Its AACSB, AMBA, and EQUIS-accredited business school ranks among the top business schools in Asia. The university also has strong programs in information technology, education, and creative arts.</p>
+          <p>With over 30,000 students and 3,000+ international students from more than 60 countries, UUM offers a truly global learning experience. The medium of instruction is English, and the university is committed to producing graduates who are not only academically proficient but also socially responsible and globally competitive.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:16px;">🎯 Key Highlights</h3>
+          <ul class="icon-list">
+            <li>AACSB, AMBA & EQUIS triple-accredited business school</li>
+            <li>Specializes in business, management & economics</li>
+            <li>Beautiful 1,061-hectare green campus</li>
+            <li>English-medium instruction</li>
+            <li>3,000+ international students</li>
+            <li>Strong research in business & social sciences</li>
+            <li>Affordable tuition and living costs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POPULAR COURSES ===== -->
+  <section class="section" style="background:rgba(255,255,255,0.02);border-top:1px solid var(--nav-border);border-bottom:1px solid var(--nav-border);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Popular Programs for International Students</h2>
+        <p style="max-width:60ch;margin:0 auto;">UUM offers a comprehensive range of programs across business, law, social sciences, and technology. Here are the most sought-after programs among international students.</p>
+      </div>
+      <div class="course-grid">
+        <article class="course-card">
+          <h3>💼 Business Administration</h3>
+          <p>UUM's flagship program. Covers management, marketing, human resource, strategic management, and international business with case study-based learning.</p>
+          <div class="course-tags">
+            <span class="tag">Bachelor's</span><span class="tag">Master's</span><span class="tag">PhD</span>
+          </div>
+        </article>
+        <article class="course-card">
+          <h3>📊 Accounting & Finance</h3>
+          <p>ACCA, CPA, and CIMA recognized programs. Prepares students for careers in corporate finance, banking, auditing, and financial management.</p>
+          <div class="course-tags">
+            <span class="tag">Bachelor's</span><span class="tag">Master's</span><span class="tag">MBA</span>
+          </div>
+        </article>
+        <article class="course-card">
+          <h3>⚖️ Law</h3>
+          <p>Malaysian and international law programs. UUM's law faculty is one of the most respected in Southeast Asia, with mooting competitions globally.</p>
+          <div class="course-tags">
+            <span class="tag">Bachelor's</span><span class="tag">Master's</span>
+          </div>
+        </article>
+        <article class="course-card">
+          <h3>💻 Information Technology</h3>
+          <p>Software engineering, data science, AI, cybersecurity, and information systems with strong practical and research components.</p>
+          <div class="course-tags">
+            <span class="tag">Bachelor's</span><span class="tag">Master's</span><span class="tag">PhD</span>
+          </div>
+        </article>
+        <article class="course-card">
+          <h3>🎓 Education</h3>
+          <p>Teaching certifications, educational management, TESOL, and counseling psychology. Ideal for those pursuing a career in education.</p>
+          <div class="course-tags">
+            <span class="tag">Bachelor's</span><span class="tag">Master's</span><span class="tag">PhD</span>
+          </div>
+        </article>
+        <article class="course-card">
+          <h3>🚌 Tourism & Hospitality</h3>
+          <p>Hotel management, tourism planning, event management, and culinary arts — leveraging Malaysia's booming tourism industry.</p>
+          <div class="course-tags">
+            <span class="tag">Bachelor's</span><span class="tag">Master's</span>
+          </div>
+        </article>
+        <article class="course-card">
+          <h3>📢 Media & Communication</h3>
+          <p>Broadcasting, journalism, digital media, and public relations with access to modern media labs and production studios.</p>
+          <div class="course-tags">
+            <span class="tag">Bachelor's</span><span class="tag">Master's</span>
+          </div>
+        </article>
+        <article class="course-card">
+          <h3>🌍 Environmental Studies</h3>
+          <p>Environmental management, natural resource studies, and sustainability — leveraging UUM's proximity to natural forest and highland ecosystems.</p>
+          <div class="course-tags">
+            <span class="tag">Bachelor's</span><span class="tag">Master's</span><span class="tag">PhD</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEES & SCHOLARSHIPS ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="gap:40px;align-items:start;">
+        <div>
+          <h2>Tuition Fees</h2>
+          <p style="margin-bottom:20px;">Fees vary by program level and nationality. Approximate ranges for international students per semester:</p>
+          <div class="fee-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Program Level</th>
+                  <th>Approx. Fee (USD/semester)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Bachelor's (Business/IT)</td><td>$1,200 – $2,200</td></tr>
+                <tr><td>Bachelor's (Law)</td><td>$2,000 – $2,800</td></tr>
+                <tr><td>Master's (Coursework)</td><td>$1,800 – $3,000</td></tr>
+                <tr><td>Master's (Research)</td><td>$1,200 – $2,000</td></tr>
+                <tr><td>PhD (Research)</td><td>$1,200 – $2,000</td></tr>
+                <tr><td>MBA</td><td>$3,000 – $5,000/semester</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:0.85rem;margin-top:12px;color:var(--muted);">*Fees are approximate and subject to change. USD equivalent based on current exchange rate.</p>
+        </div>
+        <div>
+          <h2>Scholarships Available</h2>
+          <p style="margin-bottom:20px;">UUM and the Malaysian government offer scholarships for outstanding international students:</p>
+          <div class="scholarship-card">
+            <h3>🎓 Malaysian Government Scholarships</h3>
+            <ul class="icon-list">
+              <li><strong>Malaysia International Scholarship (MIS)</strong> — Full tuition + living allowance + flights for postgraduate students</li>
+              <li><strong>IsDB Scholarship</strong> — For students from Islamic Development Bank member countries</li>
+              <li><strong>Commonwealth Scholarship</strong> — For students from Commonwealth nations</li>
+            </ul>
+          </div>
+          <div class="scholarship-card" style="margin-top:16px;">
+            <h3>🏫 UUM Internal Scholarships</h3>
+            <ul class="icon-list">
+              <li><strong>UUM Graduate Scholarship</strong> — Tuition waiver + monthly stipend for research-based postgraduate students</li>
+              <li><strong>Dean’s List Achievement Award</strong> — Cash prize for top-achieving undergraduate students</li>
+              <li><strong>Part-time research assistant & teaching assistant positions</strong> — Paid academic work while studying</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ADMISSION REQUIREMENTS ===== -->
+  <section class="section" style="background:rgba(255,255,255,0.02);border-top:1px solid var(--nav-border);border-bottom:1px solid var(--nav-border);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Admission Requirements</h2>
+        <p style="max-width:60ch;margin:0 auto;">Requirements vary by program. The general requirements for international students are listed below.</p>
+      </div>
+      <div class="grid-2" style="gap:40px;">
+        <div>
+          <h3 style="margin-bottom:16px;">📋 General Requirements</h3>
+          <ul class="req-list">
+            <li><span class="req-icon">🎓</span><div><strong>Bachelor's Degree:</strong> Completion of 12 years of education OR A-Levels/Foundation with minimum GPA 2.0–3.0 depending on program.</div></li>
+            <li><span class="req-icon">📚</span><div><strong>Master's Degree:</strong> Bachelor's degree in relevant field with minimum CGPA 2.50 OR equivalent. Some coursework programs have flexible entry.</div></li>
+            <li><span class="req-icon">🔬</span><div><strong>PhD:</strong> Master's degree in relevant field. Research proposal required. Publications preferred for competitive candidates.</div></li>
+            <li><span class="req-icon">🌐</span><div><strong>English Proficiency:</strong> IELTS 6.0 / TOEFL 550 / MUET Band 4 or equivalent (waived for native English speakers).</div></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="margin-bottom:16px;">📑 Required Documents</h3>
+          <ul class="req-list">
+            <li><span class="req-icon">📄</span><div>Valid passport (minimum 6 months validity)</div></li>
+            <li><span class="req-icon">🎓</span><div>Academic certificates & transcripts (translated & notarized)</div></li>
+            <li><span class="req-icon">🌐</span><div>English proficiency test certificate</div></li>
+            <li><span class="req-icon">📸</span><div>Passport-size photographs</div></li>
+            <li><span class="req-icon">🏥</span><div>Medical checkup report</div></li>
+            <li><span class="req-icon">📝</span><div>Personal statement / motivation letter</div></li>
+            <li><span class="req-icon">📋</span><div>Letter of recommendation (for postgraduate)</div></li>
+            <li><span class="req-icon">✅</span><div>Proof of financial capability</div></li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin-top:30px;">
+        <h4>⚠️ Important Note for Bangladeshi Students</h4>
+        <p>Students from Bangladesh require an <strong>EMGS Approval Letter</strong> and must complete medical screening through EMGS-approved clinics. WorldLink assists with complete application processing, EMGS procedures, and student pass (visa) applications. Contact us for step-by-step guidance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CAMPUS LIFE ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 style="margin-bottom:20px;">Campus Life & Facilities</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>🏠 Accommodation</h3>
+          <p>On-campus apartments and residential colleges with basic amenities. The UUM residential campus can accommodate over 10,000 students. Nearby off-campus options in Sintok and Alor Setar are affordable.</p>
+        </div>
+        <div class="card">
+          <h3>🍽️ Dining & Social Life</h3>
+          <p>Multiple food courts and restaurants serving Malaysian and international cuisine. The campus has cultural clubs, religious societies, sports teams, and a vibrant arts scene.</p>
+        </div>
+        <div class="card">
+          <h3>🏋️ Sports & Recreation</h3>
+          <p>Olympic swimming pool, sports complex, gym, running tracks, football pitches, basketball and badminton courts. UUM is known for its strong sports program.</p>
+        </div>
+        <div class="card">
+          <h3>📚 Library & Learning Centre</h3>
+          <p>The main library (Perpustakaan Sultan Abdul Halім) holds over 1 million books, digital journals, and databases. 24/7 study rooms available during exam periods.</p>
+        </div>
+        <div class="card">
+          <h3>🏛️ UUM Innovation Park & Business Centre</h3>
+          <p>Entrepreneurship hub for student startups. Incubation centre, business clinic, and networking events with Malaysian industries and multinational companies.</p>
+        </div>
+        <div class="card">
+          <h3>🚌 Location & Transport</h3>
+          <p>Located in Sintok, Kedah — close to the Malaysia-Thailand border. Free campus shuttles. 45 minutes to Alor Setar city. Near Perlis border. Access to KL via express bus or train.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE UUM ===== -->
+  <section class="section" style="background:rgba(255,255,255,0.02);border-top:1px solid var(--nav-border);border-bottom:1px solid var(--nav-border);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Why International Students Choose UUM</h2>
+        <p style="max-width:60ch;margin:0 auto;">UUM is especially popular among international students for business and social sciences education in Malaysia.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>✅ Triple-Accredited Business School</h3>
+          <p>UUM's business school holds AACSB, AMBA, and EQUIS accreditation — the gold standard for business education globally. Only 1% of business schools worldwide achieve this.</p>
+        </div>
+        <div class="card">
+          <h3>✅ Affordable Tuition & Low Living Cost</h3>
+          <p>Studying at UUM costs a fraction of what you'd pay at universities in the UK, Australia, or Canada — with the same internationally recognized degree.</p>
+        </div>
+        <div class="card">
+          <h3>✅ Peaceful & Green Campus Environment</h3>
+          <p>The UUM campus in Sintok is surrounded by hills and forest, providing a cool climate and a distraction-free environment ideal for focused study.</p>
+        </div>
+        <div class="card">
+          <h3>✅ Strong Industry Connections</h3>
+          <p>UUM has partnerships with Malaysian corporations, government agencies, and multinational companies for internships, graduate placements, and research collaborations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="section">
+    <div class="container" style="text-align:center;">
+      <h2>Ready to Study at UUM?</h2>
+      <p style="max-width:55ch;margin:12px auto 24px;">WorldLink's expert consultants can guide you through the complete UUM application process — from program selection to obtaining your student pass and settling in Malaysia.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="apply-now.html" class="btn" style="padding:14px 28px;">Apply Now →</a>
+        <a href="https://wa.me/601124328920?text=Hi, I want to apply to Universiti Utara Malaysia (UUM)" target="_blank" class="btn btn-outline" style="padding:14px 28px;">WhatsApp: +6011 2432 8920</a>
+      </div>
+      <p style="margin-top:16px;font-size:0.9rem;">📞 Or call us directly: <strong>+6011 2432 8920</strong></p>
+    </div>
+  </section>
+</main>
+
+<!-- ===== FLOATING WHATSAPP ===== -->
+<div class="cta-sticky">
+  <a href="https://wa.me/601124328920" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">💬</a>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.pnj.png" alt="WorldLink Logo">
+        <h3>WorldLink Migration & Visa Consultancy</h3>
+        <p>Your trusted partner for global migration and study abroad services.</p>
+        <div class="footer-buttons">
+          <a href="https://wa.me/601124328920" target="_blank">WhatsApp</a>
+          <a href="mailto:enuires.worldlinkmigration@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="visa-applications.html">Visa Applications</a></li>
+        <li><a href="immigration-advice.html">Immigration Advice</a></li>
+        <li><a href="document-preparation.html">Document Preparation</a></li>
+        <li><a href="consultation-support.html">Consultation & Support</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Destinations</h4><ul>
+        <li><a href="usa.html">USA</a></li>
+        <li><a href="canada.html">Canada</a></li>
+        <li><a href="uk.html">United Kingdom</a></li>
+        <li><a href="australia.html">Australia</a></li>
+        <li><a href="malaysia.html">Malaysia</a></li>
+        <li><a href="china.html">China</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="get-in-touch.html">Get in Touch</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="apply-now.html">Apply Now</a></li>
+      </ul>
+      <p style="margin-top:16px;font-size:0.85rem;">📞 +6011 2432 8920<br>📍 Rajshahi, Bangladesh</p></div>
+    </div>
+    <div class="footer-bottom"><p>Copyright © 2025 WorldLink Migration & Visa Consultancy. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="auth.js"></script>
+<script>
+function toggleMobileNav() { document.getElementById('mainNav').classList.toggle('open'); }
+function updateAuthNav() {
+  const user = getCurrentUser();
+  const authItem = document.getElementById('authNavItem');
+  if (!authItem) return;
+  if (user) {
+    authItem.innerHTML = `<a href="#">👤 ${user.username} <span class="nav-arrow">▾</span></a><ul>
+      <li><a href="${user.role==='admin'?'admin-panel.html':'user-dashboard.html'}">Dashboard</a></li>
+      <li><a href="#" onclick="logout()">Logout</a></li></ul>`;
+  }
+}
+document.addEventListener('DOMContentLoaded', () => {
+  updateAuthNav();
+  document.querySelectorAll('.main-nav li a').forEach(link => {
+    if (link.nextElementSibling && link.nextElementSibling.tagName === 'UL') {
+      link.addEventListener('click', e => {
+        if (window.innerWidth <= 768) { e.preventDefault(); link.nextElementSibling.classList.toggle('open'); }
+      });
+    }
+  });
+});
+</script>
+</body>
+</html>

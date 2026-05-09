@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="logo.pnj.png" type="image/png">
+  <title>WorldLink Migration & Visa Consultancy</title>
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    /* ---- Hero gradient text ---- */
+    .gradient-text {
+      background: linear-gradient(135deg, #ff4d4d, #6c8cff, #00d4ff);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    /* ---- Stats ---- */
+    .stats-row { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 30px; }
+    .stat { text-align: center; }
+    .stat-number { font-size: 2.2rem; font-weight: 800; color: var(--accent); }
+    .stat-label { font-size: 0.85rem; color: var(--muted); }
+    /* ---- CTA ---- */
+    .cta-section {
+      background: linear-gradient(135deg, rgba(108,140,255,0.15), rgba(108,255,200,0.08));
+      border: 1px solid rgba(108,140,255,0.2); border-radius: 16px; padding: 50px;
+      text-align: center; margin: 40px 0;
+    }
+    .cta-section h2 { margin-bottom: 12px; }
+    .cta-section p { max-width: 55ch; margin: 0 auto 24px; }
+    .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    /* ---- Contact cards ---- */
+    .contact-card { display: flex; gap: 16px; align-items: flex-start; }
+    .contact-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(108,140,255,0.2); display: grid; place-items: center; font-size: 1.2rem; flex-shrink: 0; }
+    .contact-info h4 { margin: 0 0 4px; font-size: 1rem; }
+    .contact-info p { margin: 0; font-size: 0.9rem; }
+    /* ---- Nav dropdown arrow ---- */
+    .nav-arrow { font-size: 0.6rem; transition: transform 0.2s; }
+    li:hover .nav-arrow { transform: rotate(180deg); }
+    /* ---- Mobile subnav toggle ---- */
+    .mobile-sub-toggle { display: none; background: none; border: none; color: var(--muted); font-size: 0.8rem; cursor: pointer; margin-left: auto; padding: 4px; }
+    @media (max-width: 768px) {
+      .mobile-sub-toggle { display: flex; }
+      .main-nav li ul { display: none !important; }
+      .main-nav li ul.open { display: block !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="main.html" class="brand" aria-label="WorldLink home">
+      <img src="logo.pnj.png" alt="WorldLink Logo">
+      <span class="brand-name">WorldLink Migration & Visa Consultancy</span>
+    </a>
+
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Open menu">☰</button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <button class="nav-close" onclick="toggleMobileNav()" aria-label="Close menu">✕</button>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li>
+          <a href="#services">Services <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="visa-applications.html">Visa Applications</a></li>
+            <li><a href="immigration-advice.html">Immigration Advice</a></li>
+            <li><a href="document-preparation.html">Document Preparation</a></li>
+            <li><a href="consultation-support.html">Consultation & Support</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#about">About <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="mission.html">Mission</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#contact">Contact <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="get-in-touch.html">Get in Touch</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#study">Study Destinations <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="usa.html">USA</a></li>
+            <li><a href="canada.html">Canada</a></li>
+            <li><a href="uk.html">UK</a></li>
+            <li><a href="australia.html">Australia</a></li>
+            <li><a href="malaysia.html">Malaysia</a></li>
+            <li><a href="china.html">China</a></li>
+          </ul>
+        </li>
+        <li id="authNavItem"><a href="login.html">Sign In</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ===== HERO ===== -->
+  <section class="container">
+    <div class="hero">
+      <div>
+        <span class="badge">Trusted Consultancy Since 2015</span>
+        <h1>Expert Migration & <span class="gradient-text">Visa Services</span> for Your Future</h1>
+        <p>Navigate your immigration journey with confidence. We provide comprehensive visa applications, immigration advice, and personalized consultancy to help you achieve your global aspirations.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="apply-now.html" class="btn" style="padding:14px 24px;font-size:1rem;">Apply Now →</a>
+          <a href="#contact" class="btn btn-outline" style="padding:14px 24px;font-size:1rem;">Free Consultation</a>
+        </div>
+        <div class="stats-row">
+          <div class="stat"><div class="stat-number">3,500+</div><div class="stat-label">Visas Approved</div></div>
+          <div class="stat"><div class="stat-number">15+</div><div class="stat-label">Countries</div></div>
+          <div class="stat"><div class="stat-number">98%</div><div class="stat-label">Success Rate</div></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Decorative illustration">
+        <img src="hero-image.jpg" alt="Migration and Visa Services" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:40px;">
+        <h2>Our Services</h2>
+        <p style="max-width:55ch;margin:0 auto;">Comprehensive solutions tailored to your migration needs — from initial consultation to final visa approval.</p>
+      </div>
+      <div class="grid-4">
+        <article class="card">
+          <h3>Visa Applications</h3>
+          <p>Expert assistance with tourist, work, student, and family visas for over 15 countries worldwide.</p>
+          <a href="visa-applications.html" class="btn btn-outline btn-sm" style="margin-top:12px;">Learn More</a>
+        </article>
+        <article class="card">
+          <h3>Immigration Advice</h3>
+          <p>Personalized guidance on immigration policies, eligibility criteria, and the best pathways for you.</p>
+          <a href="immigration-advice.html" class="btn btn-outline btn-sm" style="margin-top:12px;">Learn More</a>
+        </article>
+        <article class="card">
+          <h3>Document Preparation</h3>
+          <p>We help gather, verify, and prepare all required documents for a smooth application process.</p>
+          <a href="document-preparation.html" class="btn btn-outline btn-sm" style="margin-top:12px;">Learn More</a>
+        </article>
+        <article class="card">
+          <h3>Consultation & Support</h3>
+          <p>Ongoing expert support throughout your entire immigration journey — from start to finish.</p>
+          <a href="consultation-support.html" class="btn btn-outline btn-sm" style="margin-top:12px;">Learn More</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="container">
+    <div class="cta-section">
+      <h2>Ready to Start Your Journey?</h2>
+      <p>Get expert guidance on your visa and migration options. Our consultants are here to help you every step of the way.</p>
+      <div class="cta-buttons">
+        <a href="apply-now.html" class="btn" style="padding:14px 28px;font-size:1rem;">Apply Now</a>
+        <a href="https://wa.me/601124328920" target="_blank" class="btn btn-outline" style="padding:14px 28px;font-size:1rem;">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="grid-2" style="align-items:center;gap:60px;">
+        <div>
+          <span class="badge">About Us</span>
+          <h2 style="margin-top:12px;">Your Trusted Partner in Global Migration</h2>
+          <p>WorldLink Migration & Visa Consultancy is dedicated to helping individuals and families achieve their dreams of living and working abroad. With over a decade of experience, we provide reliable and efficient services to make your migration journey smooth and successful.</p>
+          <p>Our team of certified migration agents and consultants serve clients across Bangladesh and beyond, specializing in student, work, and family immigration to countries like Canada, USA, UK, Australia, Malaysia, and more.</p>
+          <a href="our-story.html" class="btn" style="margin-top:8px;">Read Our Story →</a>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:16px;">Why Choose Us?</h3>
+          <ul class="icon-list">
+            <li>Government-certified migration consultants</li>
+            <li>High success rate across all visa categories</li>
+            <li>Personalized case management</li>
+            <li>Transparent process with regular updates</li>
+            <li>Affordable, competitive pricing</li>
+            <li>End-to-end support from application to approval</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STUDY DESTINATIONS PREVIEW ===== -->
+  <section class="section" id="study" style="background:rgba(255,255,255,0.02);border-top:1px solid var(--nav-border);border-bottom:1px solid var(--nav-border);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:40px;">
+        <h2>Study Destinations</h2>
+        <p style="max-width:55ch;margin:0 auto;">Explore top study abroad destinations. We assist with admissions, visas, and scholarships.</p>
+      </div>
+      <div class="grid-3">
+        <a href="usa.html" class="card" style="display:block;color:inherit;text-decoration:none;">
+          <h3>🇺🇸 USA</h3>
+          <p>World-class universities, OPT opportunities, and diverse programs for international students.</p>
+          <span class="badge" style="margin-top:8px;">Learn More →</span>
+        </a>
+        <a href="canada.html" class="card" style="display:block;color:inherit;text-decoration:none;">
+          <h3>🇨🇦 Canada</h3>
+          <p>Affordable education, post-graduation work permits, and a clear path to permanent residency.</p>
+          <span class="badge" style="margin-top:8px;">Learn More →</span>
+        </a>
+        <a href="uk.html" class="card" style="display:block;color:inherit;text-decoration:none;">
+          <h3>🇬🇧 United Kingdom</h3>
+          <p>Prestigious institutions, a 2-year post-study work visa, and rich cultural heritage.</p>
+          <span class="badge" style="margin-top:8px;">Learn More →</span>
+        </a>
+        <a href="australia.html" class="card" style="display:block;color:inherit;text-decoration:none;">
+          <h3>🇦🇺 Australia</h3>
+          <p>Globally recognized degrees, part-time work rights, and stunning quality of life.</p>
+          <span class="badge" style="margin-top:8px;">Learn More →</span>
+        </a>
+        <a href="malaysia.html" class="card" style="display:block;color:inherit;text-decoration:none;">
+          <h3>🇲🇾 Malaysia</h3>
+          <p>Affordable tuition, internationally accredited universities, and a welcoming environment.</p>
+          <span class="badge" style="margin-top:8px;">Learn More →</span>
+        </a>
+        <a href="china.html" class="card" style="display:block;color:inherit;text-decoration:none;">
+          <h3>🇨🇳 China</h3>
+          <p>Rapidly growing education hub with prestigious universities and scholarship opportunities.</p>
+          <span class="badge" style="margin-top:8px;">Learn More →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:40px;">
+        <h2>Get in Touch</h2>
+        <p style="max-width:55ch;margin:0 auto;">Contact us for a consultation and let us guide you through your visa and migration needs.</p>
+      </div>
+      <div class="grid-2">
+        <div>
+          <div class="card contact-card" style="margin-bottom:16px;">
+            <div class="contact-icon">📍</div>
+            <div class="contact-info">
+              <h4>Our Office</h4>
+              <p>337, Alokar More, New Market Road,<br>Sostitola, Boalia, Rajshahi, Bangladesh</p>
+            </div>
+          </div>
+          <div class="card contact-card" style="margin-bottom:16px;">
+            <div class="contact-icon">📞</div>
+            <div class="contact-info">
+              <h4>Phone / WhatsApp</h4>
+              <p>+6011 2432 8920</p>
+            </div>
+          </div>
+          <div class="card contact-card">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-info">
+              <h4>Email</h4>
+              <p>enuires.worldlinkmigration@gmail.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <form id="contactForm" onsubmit="handleContactSubmit(event)">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text" placeholder="Your full name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required>
+              </div>
+              <div class="form-group full">
+                <label for="subject">Subject</label>
+                <input id="subject" name="subject" type="text" placeholder="e.g. Canada Student Visa Inquiry">
+              </div>
+              <div class="form-group full">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+              </div>
+              <div class="form-group full">
+                <button type="submit" class="btn" style="width:100%;padding:14px;">Send Message →</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" role="contentinfo" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.pnj.png" alt="WorldLink Logo">
+        <h3>WorldLink Migration & Visa Consultancy</h3>
+        <p>Your trusted partner for global migration and study abroad services. Serving clients since 2015.</p>
+        <div class="footer-buttons">
+          <a href="https://wa.me/601124328920" target="_blank">WhatsApp</a>
+          <a href="mailto:enuires.worldlinkmigration@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="visa-applications.html">Visa Applications</a></li>
+          <li><a href="immigration-advice.html">Immigration Advice</a></li>
+          <li><a href="document-preparation.html">Document Preparation</a></li>
+          <li><a href="consultation-support.html">Consultation & Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Destinations</h4>
+        <ul>
+          <li><a href="usa.html">USA</a></li>
+          <li><a href="canada.html">Canada</a></li>
+          <li><a href="uk.html">United Kingdom</a></li>
+          <li><a href="australia.html">Australia</a></li>
+          <li><a href="malaysia.html">Malaysia</a></li>
+          <li><a href="china.html">China</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="get-in-touch.html">Get in Touch</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="apply-now.html">Apply Now</a></li>
+        </ul>
+        <p style="margin-top:16px;font-size:0.85rem;">
+          📞 +6011 2432 8920<br>
+          📍 Rajshahi, Bangladesh
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © 2025 WorldLink Migration & Visa Consultancy. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="auth.js"></script>
+<script>
+  /* ---- Mobile nav ---- */
+  function toggleMobileNav() {
+    document.getElementById('mainNav').classList.toggle('open');
+  }
+
+  /* ---- Auth-aware nav ---- */
+  function updateAuthNav() {
+    const user = getCurrentUser();
+    const authItem = document.getElementById('authNavItem');
+    if (!authItem) return;
+    if (user) {
+      authItem.innerHTML = `
+        <a href="#">👤 ${user.username} <span class="nav-arrow">▾</span></a>
+        <ul>
+          <li><a href="${user.role === 'admin' ? 'admin-panel.html' : 'user-dashboard.html'}">Dashboard</a></li>
+          <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>`;
+    }
+  }
+
+  /* ---- Contact form ---- */
+  function handleContactSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    const name = data.get('name');
+    const email = data.get('email');
+    const subject = data.get('subject') || 'General Inquiry';
+    const message = data.get('message');
+    const btn = form.querySelector('button[type=submit]');
+
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    // Simulate send (replace with real API call if available)
+    setTimeout(() => {
+      alert(`Thank you, ${name}! We've received your message. We'll contact you at ${email} shortly.`);
+      form.reset();
+      btn.textContent = 'Send Message →';
+      btn.disabled = false;
+    }, 800);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    updateAuthNav();
+    // Mobile: toggle sub-menus
+    document.querySelectorAll('.main-nav li a').forEach(link => {
+      if (link.nextElementSibling && link.nextElementSibling.tagName === 'UL') {
+        link.addEventListener('click', e => {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            link.nextElementSibling.classList.toggle('open');
+          }
+        });
+      }
+    });
+  });
+</script>
+</body>
+</html>

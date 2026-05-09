@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="logo.pnj.png" type="image/png">
+  <title>Universiti Putra Malaysia (UPM) - WorldLink Migration & Visa Consultancy</title>
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .uni-hero {
+      background: linear-gradient(135deg, rgba(108,140,255,0.15), rgba(20,26,42,0.95));
+      border-bottom: 1px solid var(--nav-border);
+      padding: 60px 0 40px; text-align: center;
+    }
+    .uni-hero h1 { margin-bottom: 12px; }
+    .uni-hero p { max-width: 65ch; margin: 0 auto; font-size: 1.05rem; }
+    .uni-quick-facts {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;
+      margin: 30px auto; max-width: 800px;
+    }
+    .quick-fact {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 12px; padding: 16px; text-align: center;
+    }
+    .quick-fact-icon { font-size: 1.6rem; margin-bottom: 6px; }
+    .quick-fact-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .quick-fact-value { font-size: 1.05rem; font-weight: 700; margin-top: 4px; color: var(--accent); }
+    .course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .course-card {
+      background: var(--card); border: 1px solid var(--card-border); border-radius: 12px;
+      padding: 20px; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .course-card:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,0.3); }
+    .course-card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .course-card p { margin: 0 0 12px; font-size: 0.9rem; }
+    .course-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .tag {
+      padding: 4px 10px; border-radius: 999px; font-size: 0.75rem;
+      background: rgba(108,140,255,0.15); border: 1px solid rgba(108,140,255,0.25); color: var(--accent);
+    }
+    .fee-table-wrap { overflow-x: auto; border-radius: var(--radius); }
+    .req-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .req-list li {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 16px; background: var(--card); border-radius: 10px;
+      border: 1px solid var(--card-border);
+    }
+    .req-icon { width: 32px; height: 32px; border-radius: 8px; background: rgba(108,140,255,0.2); display: grid; place-items: center; font-size: 0.9rem; flex-shrink: 0; }
+    .scholarship-card { background: linear-gradient(135deg, rgba(108,140,255,0.12), rgba(108,255,200,0.06)); border: 1px solid rgba(108,140,255,0.2); border-radius: 16px; padding: 28px; }
+    .scholarship-card h3 { margin-bottom: 16px; }
+    .cta-sticky {
+      position: fixed; bottom: 20px; right: 20px; z-index: 90;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .whatsapp-float {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: #25D366; display: grid; place-items: center;
+      font-size: 1.5rem; box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: transform 0.2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .highlight-box { padding: 20px 24px; border-radius: 12px; background: rgba(108,140,255,0.08); border: 1px solid rgba(108,140,255,0.2); border-left: 4px solid var(--accent); margin: 24px 0; }
+    .highlight-box h4 { margin: 0 0 8px; color: var(--accent); }
+    .highlight-box p { margin: 0; }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="main.html" class="brand" aria-label="WorldLink home">
+      <img src="logo.pnj.png" alt="WorldLink Logo">
+      <span class="brand-name">WorldLink Migration & Visa Consultancy</span>
+    </a>
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Open menu">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <button class="nav-close" onclick="toggleMobileNav()">✕</button>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="#services">Services <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="visa-applications.html">Visa Applications</a></li>
+            <li><a href="immigration-advice.html">Immigration Advice</a></li>
+            <li><a href="document-preparation.html">Document Preparation</a></li>
+            <li><a href="consultation-support.html">Consultation & Support</a></li>
+          </ul>
+        </li>
+        <li><a href="#about">About <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="mission.html">Mission</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="get-in-touch.html">Get in Touch</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </li>
+        <li><a href="#study">Study Destinations <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="malaysia.html">Malaysia</a></li>
+            <li><a href="universiti-putra-malaysia.html">UPM</a></li>
+            <li><a href="universiti-utara-malaysia.html">UUM</a></li>
+          </ul>
+        </li>
+        <li id="authNavItem"><a href="login.html">Sign In</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ===== PAGE HERO ===== -->
+  <section class="uni-hero">
+    <div class="container">
+      <span class="badge">🇲🇾 Malaysia — Top Ranked University</span>
+      <h1 style="margin-top:12px;">Universiti Putra Malaysia (UPM)</h1>
+      <p>One of Malaysia's leading research universities, ranked among the top 250 universities globally. Known for excellence in agriculture, biosciences, engineering, and business.</p>
+      <div class="uni-quick-facts">
+        <div class="quick-fact">
+          <div class="quick-fact-icon">🏆</div>
+          <div class="quick-fact-label">World Rank</div>
+          <div class="quick-fact-value">#234 (QS 2024)</div>
+        </div>
+        <div class="quick-fact">
+          <div class="quick-fact-icon">📍</div>
+          <div class="quick-fact-label">Campus</div>
+          <div class="quick-fact-value">Serdang, Selangor</div>
+        </div>
+        <div class="quick-fact">
+          <div class="quick-fact-icon">🎓</div>
+          <div class="quick-fact-label">Established</div>
+          <div class="quick-fact-value">1931</div>
+        </div>
+        <div class="quick-fact">
+          <div class="quick-fact-icon">👥</div>
+          <div class="quick-fact-label">Intl Students</div>
+          <div class="quick-fact-value">5,000+</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px;">
+        <a href="apply-now.html" class="btn" style="padding:12px 24px;">Apply to UPM →</a>
+        <a href="https://wa.me/601124328920?text=Hi, I'm interested in studying at UPM (Universiti Putra Malaysia)" target="_blank" class="btn btn-outline" style="padding:12px 24px;">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT UPM ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="align-items:center;gap:50px;">
+        <div>
+          <h2>About Universiti Putra Malaysia</h2>
+          <p>Universiti Putra Malaysia (UPM) is a premier research university located in Serdang, Selangor, Malaysia. Originally founded as the School of Agriculture in 1931, UPM has grown into a world-class institution with a strong reputation in agriculture, forestry, veterinary sciences, food science, biotechnology, and environmental sciences.</p>
+          <p>The university is recognized internationally, ranking among the top 1% of universities globally (QS World University Rankings). UPM's serene 5.6 square kilometer campus features state-of-the-art facilities, research centers, student accommodation, and extensive green spaces.</p>
+          <p>UPM welcomes over 5,000 international students from more than 70 countries, making it one of the most diverse universities in Malaysia. The medium of instruction is English, making it an ideal destination for international students.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:16px;">🎯 Key Highlights</h3>
+          <ul class="icon-list">
+            <li>Top 250 universities worldwide (QS 2024)</li>
+            <li>5 QS 5-Star ratings for teaching</li>
+            <li>Over 80 years of academic excellence</li>
+            <li>English-medium programs</li>
+            <li>5,000+ international students</li>
+            <li>Beautiful 561-hectare green campus</li>
+            <li>Strong research & innovation focus</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POPULAR COURSES ===== -->
+  <section class="section" style="background:rgba(255,255,255,0.02);border-top:1px solid var(--nav-border);border-bottom:1px solid var(--nav-border);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Popular Programs for International Students</h2>
+        <p style="max-width:60ch;margin:0 auto;">UPM offers a wide range of undergraduate and postgraduate programs across faculties. Here are some of the most popular choices among international students.</p>
+      </div>
+      <div class="course-grid">
+        <article class="course-card">
+          <h3>🌾 Agriculture & Food Science</h3>
+          <p>UPM's flagship faculty — covering crop production, food technology, nutrition, and agribusiness. Ranked top 50 globally.</p>
+          <div class="course-tags">
+            <span class="tag">Bachelor's</span><span class="tag">Master's</span><span class="tag">PhD</span>
+          </div>
+        </article>
+        <article class="course-card">
+          <h3>🔬 Biotechnology</h3>
+          <p>Molecular biology, genetic engineering, industrial biotechnology, and biomedical research with world-class labs.</p>
+          <div class="course-tags">
+            <span class="tag">Bachelor's</span><span class="tag">Master's</span><span class="tag">PhD</span>
+          </div>
+        </article>
+        <article class="course-card">
+          <h3>⚙️ Engineering</h3>
+          <p>Civil, Mechanical, Electrical, Chemical, and Computer Engineering. ABET-accredited programs with strong industry links.</p>
+          <div class="course-tags">
+            <span class="tag">Bachelor's</span><span class="tag">Master's</span><span class="tag">PhD</span>
+          </div>
+        </article>
+        <article class="course-card">
+          <h3>💼 Business & Economics</h3>
+          <p>Accounting, Finance, Marketing, Management, and Economics. ACCA and CPA recognized programs with internship opportunities.</p>
+          <div class="course-tags">
+            <span class="tag">Bachelor's</span><span class="tag">Master's</span><span class="tag">MBA</span>
+          </div>
+        </article>
+        <article class="course-card">
+          <h3>🐾 Veterinary Medicine</h3>
+          <p>One of Southeast Asia's top veterinary schools. Full accreditation from Malaysian Veterinary Council. State-of-the-art veterinary hospital.</p>
+          <div class="course-tags">
+            <span class="tag">Bachelor's</span><span class="tag">Master's</span><span class="tag">PhD</span>
+          </div>
+        </article>
+        <article class="course-card">
+          <h3>🌍 Environmental Science</h3>
+          <p>Environmental management, conservation, climate change studies, and natural resource sustainability.</p>
+          <div class="course-tags">
+            <span class="tag">Bachelor's</span><span class="tag">Master's</span><span class="tag">PhD</span>
+          </div>
+        </article>
+        <article class="course-card">
+          <h3>💻 Computer Science & IT</h3>
+          <p>Software engineering, artificial intelligence, data science, cybersecurity, and information systems.</p>
+          <div class="course-tags">
+            <span class="tag">Bachelor's</span><span class="tag">Master's</span><span class="tag">PhD</span>
+          </div>
+        </article>
+        <article class="course-card">
+          <h3>📊 Architecture & Design</h3>
+          <p>Architecture, interior design, landscape architecture, and sustainable design with strong practical components.</p>
+          <div class="course-tags">
+            <span class="tag">Bachelor's</span><span class="tag">Master's</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEES & SCHOLARSHIPS ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="gap:40px;align-items:start;">
+        <div>
+          <h2>Tuition Fees</h2>
+          <p style="margin-bottom:20px;">Fees vary by program level and nationality. Below is an approximate range for international students per semester:</p>
+          <div class="fee-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Program Level</th>
+                  <th>Approx. Fee (USD/semester)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Bachelor's (Science)</td><td>$1,500 – $2,500</td></tr>
+                <tr><td>Bachelor's (Engineering)</td><td>$2,000 – $3,000</td></tr>
+                <tr><td>Master's (Coursework)</td><td>$2,000 – $3,500</td></tr>
+                <tr><td>Master's (Research)</td><td>$1,500 – $2,500</td></tr>
+                <tr><td>PhD (Research)</td><td>$1,500 – $2,500</td></tr>
+                <tr><td>Medical/Veterinary</td><td>$5,000 – $12,000</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:0.85rem;margin-top:12px;color:var(--muted);">*Fees are approximate and subject to change. USD equivalent based on current exchange rate.</p>
+        </div>
+        <div>
+          <h2>Scholarships Available</h2>
+          <p style="margin-bottom:20px;">UPM and the Malaysian government offer several scholarships for outstanding international students:</p>
+          <div class="scholarship-card">
+            <h3>🎓 Malaysian Government Scholarships</h3>
+            <ul class="icon-list">
+              <li><strong>Malaysia International Scholarship (MIS)</strong> — Full tuition + living allowance + flights for postgraduate students</li>
+              <li><strong>Islamic Development Bank (IsDB) Scholarship</strong> — For students from IsDB member countries</li>
+              <li><strong>Commonwealth Scholarship</strong> — For students from Commonwealth nations</li>
+            </ul>
+          </div>
+          <div class="scholarship-card" style="margin-top:16px;">
+            <h3>🏫 UPM Internal Scholarships</h3>
+            <ul class="icon-list">
+              <li><strong>UPM Graduate Research Scholarship</strong> — Tuition waiver + monthly stipend for PhD students</li>
+              <li><strong>Faculty-specific grants</strong> — Available for high-achieving undergraduate students</li>
+              <li><strong>Part-time research assistant positions</strong> — Paid research work while studying</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ADMISSION REQUIREMENTS ===== -->
+  <section class="section" style="background:rgba(255,255,255,0.02);border-top:1px solid var(--nav-border);border-bottom:1px solid var(--nav-border);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Admission Requirements</h2>
+        <p style="max-width:60ch;margin:0 auto;">Requirements vary by program. The general requirements for international students are listed below.</p>
+      </div>
+      <div class="grid-2" style="gap:40px;">
+        <div>
+          <h3 style="margin-bottom:16px;">📋 General Requirements</h3>
+          <ul class="req-list">
+            <li>
+              <span class="req-icon">🎓</span>
+              <div>
+                <strong>Bachelor's Degree:</strong> Completion of 12 years of education OR A-Levels/Foundation with minimum GPA 3.0. Specific subject requirements apply.
+              </div>
+            </li>
+            <li>
+              <span class="req-icon">📚</span>
+              <div>
+                <strong>Master's Degree:</strong> Bachelor's degree in relevant field with minimum CGPA 2.75 OR equivalent. Some programs require research proposal.
+              </div>
+            </li>
+            <li>
+              <span class="req-icon">🔬</span>
+              <div>
+                <strong>PhD:</strong> Master's degree in relevant field with publications OR a master's by research. English proficiency + research proposal required.
+              </div>
+            </li>
+            <li>
+              <span class="req-icon">🌐</span>
+              <div>
+                <strong>English Proficiency:</strong> IELTS 6.0 / TOEFL 550 / MUET Band 4 or equivalent (waived for English-speaking nation nationals).
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="margin-bottom:16px;">📑 Required Documents</h3>
+          <ul class="req-list">
+            <li><span class="req-icon">📄</span><div>Valid passport (minimum 6 months validity)</div></li>
+            <li><span class="req-icon">🎓</span><div>Academic certificates & transcripts (translated & notarized)</div></li>
+            <li><span class="req-icon">🌐</span><div>English proficiency test certificate</div></li>
+            <li><span class="req-icon">📸</span><div>Passport-size photographs (white background)</div></li>
+            <li><span class="req-icon">🏥</span><div>Medical checkup report</div></li>
+            <li><span class="req-icon">📝</span><div>Personal statement / motivation letter</div></li>
+            <li><span class="req-icon">📋</span><div>Letter of recommendation (for postgraduate)</div></li>
+            <li><span class="req-icon">✅</span><div>Proof of financial capability</div></li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin-top:30px;">
+        <h4>⚠️ Important Note for Bangladeshi Students</h4>
+        <p>Students from Bangladesh require an <strong>EMGS Approval Letter</strong> and must apply through the <strong>Malaysia International Student Representative Office</strong>. WorldLink can assist with the complete application process, EMGS medical screening, and student pass (visa) renewal. Contact us for full guidance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CAMPUS LIFE ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 style="margin-bottom:20px;">Campus Life & Facilities</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>🏠 Accommodation</h3>
+          <p>UPM offers on-campus student apartments and dormitories with basic amenities. Off-campus housing in Serdang and nearby Putrajaya is also affordable and well-connected.</p>
+        </div>
+        <div class="card">
+          <h3>🍽️ Dining & Culture</h3>
+          <p>Multiple canteens, cafes, and international food courts on campus. The campus hosts cultural festivals, clubs, sports events, and international student gatherings throughout the year.</p>
+        </div>
+        <div class="card">
+          <h3>🏋️ Sports & Recreation</h3>
+          <p>Olympic-sized swimming pool, sports complex, gym, tennis courts, football fields, and an indoor sports arena. Active recreation clubs and adventure groups.</p>
+        </div>
+        <div class="card">
+          <h3>📚 Libraries</h3>
+          <p>The main library and 5 faculty-specific libraries hold over 2 million volumes of books, journals, and digital resources. 24/7 study spaces available.</p>
+        </div>
+        <div class="card">
+          <h3>🔬 Research Facilities</h3>
+          <p>UPM has research farms, a biosafety level 3 lab, food processing pilot plants, an offshore marine research station, and an advanced science park.</p>
+        </div>
+        <div class="card">
+          <h3>🚌 Location & Transport</h3>
+          <p>Located near Putrajaya and Kuala Lumpur. Free campus shuttle buses. Easy access via KTM train to KL Sentral. Nearby airports: KLIA & KLIA2.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY STUDY AT UPM ===== -->
+  <section class="section" style="background:rgba(255,255,255,0.02);border-top:1px solid var(--nav-border);border-bottom:1px solid var(--nav-border);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Why International Students Choose UPM</h2>
+        <p style="max-width:60ch;margin:0 auto;">Here's what makes UPM a top choice for students from Bangladesh and across Asia.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>✅ Affordable World-Class Education</h3>
+          <p>UPM offers globally recognized degrees at a fraction of the cost compared to universities in the UK, USA, or Australia — making quality education accessible.</p>
+        </div>
+        <div class="card">
+          <h3>✅ Post-Study Work Opportunities</h3>
+          <p>Malaysia offers a post-study work visa for international graduates. You can stay back and work in Malaysia after your studies, with pathways to other countries.</p>
+        </div>
+        <div class="card">
+          <h3>✅ Safe & Welcoming Environment</h3>
+          <p>Malaysia is known for its warm hospitality. The multi-ethnic society is welcoming to international students, with English widely spoken on campus and in cities.</p>
+        </div>
+        <div class="card">
+          <h3>✅ Gateway to the World</h3>
+          <p>An internationally recognized degree opens doors to careers globally. UPM graduates are employed worldwide in agriculture, biotech, engineering, and business sectors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="section">
+    <div class="container" style="text-align:center;">
+      <h2>Ready to Study at UPM?</h2>
+      <p style="max-width:55ch;margin:12px auto 24px;">Our expert consultants at WorldLink can guide you through the entire UPM application process — from choosing your program to obtaining your student pass.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="apply-now.html" class="btn" style="padding:14px 28px;">Apply Now →</a>
+        <a href="https://wa.me/601124328920?text=Hi, I want to apply to Universiti Putra Malaysia (UPM)" target="_blank" class="btn btn-outline" style="padding:14px 28px;">WhatsApp: +6011 2432 8920</a>
+      </div>
+      <p style="margin-top:16px;font-size:0.9rem;">📞 Or call us directly: <strong>+6011 2432 8920</strong></p>
+    </div>
+  </section>
+</main>
+
+<!-- ===== FLOATING WHATSAPP ===== -->
+<div class="cta-sticky">
+  <a href="https://wa.me/601124328920" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">💬</a>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.pnj.png" alt="WorldLink Logo">
+        <h3>WorldLink Migration & Visa Consultancy</h3>
+        <p>Your trusted partner for global migration and study abroad services.</p>
+        <div class="footer-buttons">
+          <a href="https://wa.me/601124328920" target="_blank">WhatsApp</a>
+          <a href="mailto:enuires.worldlinkmigration@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="visa-applications.html">Visa Applications</a></li>
+        <li><a href="immigration-advice.html">Immigration Advice</a></li>
+        <li><a href="document-preparation.html">Document Preparation</a></li>
+        <li><a href="consultation-support.html">Consultation & Support</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Destinations</h4><ul>
+        <li><a href="usa.html">USA</a></li>
+        <li><a href="canada.html">Canada</a></li>
+        <li><a href="uk.html">United Kingdom</a></li>
+        <li><a href="australia.html">Australia</a></li>
+        <li><a href="malaysia.html">Malaysia</a></li>
+        <li><a href="china.html">China</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="get-in-touch.html">Get in Touch</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="apply-now.html">Apply Now</a></li>
+      </ul>
+      <p style="margin-top:16px;font-size:0.85rem;">📞 +6011 2432 8920<br>📍 Rajshahi, Bangladesh</p></div>
+    </div>
+    <div class="footer-bottom"><p>Copyright © 2025 WorldLink Migration & Visa Consultancy. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="auth.js"></script>
+<script>
+function toggleMobileNav() { document.getElementById('mainNav').classList.toggle('open'); }
+function updateAuthNav() {
+  const user = getCurrentUser();
+  const authItem = document.getElementById('authNavItem');
+  if (!authItem) return;
+  if (user) {
+    authItem.innerHTML = `<a href="#">👤 ${user.username} <span class="nav-arrow">▾</span></a><ul>
+      <li><a href="${user.role==='admin'?'admin-panel.html':'user-dashboard.html'}">Dashboard</a></li>
+      <li><a href="#" onclick="logout()">Logout</a></li></ul>`;
+  }
+}
+document.addEventListener('DOMContentLoaded', () => {
+  updateAuthNav();
+  document.querySelectorAll('.main-nav li a').forEach(link => {
+    if (link.nextElementSibling && link.nextElementSibling.tagName === 'UL') {
+      link.addEventListener('click', e => {
+        if (window.innerWidth <= 768) { e.preventDefault(); link.nextElementSibling.classList.toggle('open'); }
+      });
+    }
+  });
+});
+</script>
+</body>
+</html>

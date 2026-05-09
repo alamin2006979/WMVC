@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study in Australia - WorldLink Migration & Visa Consultancy</title>
+  <link rel="icon" href="logo.pnj.png" type="image/png">
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .page-hero { background: linear-gradient(135deg, rgba(108,140,255,0.18), rgba(0,80,60,0.4)); border-bottom: 1px solid var(--nav-border); padding: 60px 0 40px; text-align: center; }
+    .quick-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin: 28px auto; max-width: 780px; }
+    .quick-fact { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px; text-align: center; }
+    .quick-fact-icon { font-size: 1.6rem; margin-bottom: 6px; }
+    .quick-fact-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .quick-fact-value { font-size: 1rem; font-weight: 700; margin-top: 4px; color: var(--accent); }
+    .visa-step { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+    .step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 800; flex-shrink: 0; }
+    .step-content h4 { margin: 0 0 4px; }
+    .step-content p { margin: 0; font-size: 0.9rem; }
+    .highlight-box { padding: 20px 24px; border-radius: 12px; background: rgba(108,140,255,0.08); border: 1px solid rgba(108,140,255,0.2); border-left: 4px solid var(--accent); margin: 24px 0; }
+    .highlight-box h4 { margin: 0 0 8px; color: var(--accent); }
+    .highlight-box p { margin: 0; }
+    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 90; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: grid; place-items: center; font-size: 1.5rem; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.2s; }
+    .whatsapp-float:hover { transform: scale(1.1); }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="main.html" class="brand"><img src="logo.pnj.png" alt="WorldLink Logo"><span class="brand-name">WorldLink Migration & Visa Consultancy</span></a>
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Open menu">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <button class="nav-close" onclick="toggleMobileNav()">✕</button>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="#services">Services <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="visa-applications.html">Visa Applications</a></li>
+            <li><a href="immigration-advice.html">Immigration Advice</a></li>
+            <li><a href="document-preparation.html">Document Preparation</a></li>
+            <li><a href="consultation-support.html">Consultation & Support</a></li>
+          </ul>
+        </li>
+        <li><a href="#about">About <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="mission.html">Mission</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="get-in-touch.html">Get in Touch</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </li>
+        <li><a href="#study">Study Destinations <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="usa.html">USA</a></li>
+            <li><a href="canada.html">Canada</a></li>
+            <li><a href="uk.html">UK</a></li>
+            <li><a href="australia.html">Australia</a></li>
+            <li><a href="malaysia.html">Malaysia</a></li>
+            <li><a href="china.html">China</a></li>
+          </ul>
+        </li>
+        <li id="authNavItem"><a href="login.html">Sign In</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge">🇦🇺 Study in Australia</span>
+      <h1 style="margin-top:12px;">Study in Australia</h1>
+      <p>World-class education, stunning lifestyle, and a clear path to permanent residency. Australia is one of the most popular study destinations for international students.</p>
+      <div class="quick-facts">
+        <div class="quick-fact"><div class="quick-fact-icon">🏆</div><div class="quick-fact-label">Top Universities</div><div class="quick-fact-value">ANU, UniMelb, USyd</div></div>
+        <div class="quick-fact"><div class="quick-fact-icon">👥</div><div class="quick-fact-label">Intl Students</div><div class="quick-fact-value">700,000+</div></div>
+        <div class="quick-fact"><div class="quick-fact-icon">💰</div><div class="quick-fact-label">Avg. Tuition</div><div class="quick-fact-value">AUD 20,000–45,000/yr</div></div>
+        <div class="quick-fact"><div class="quick-fact-icon">📅</div><div class="quick-fact-label">Post-Study</div><div class="quick-fact-value">2–4 yr PSW Visa</div></div>
+      </div>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="apply-now.html" class="btn" style="padding:12px 24px;">Apply to Australia →</a>
+        <a href="https://wa.me/601124328920?text=Hi, I'm interested in studying in Australia" target="_blank" class="btn btn-outline" style="padding:12px 24px;">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Why Study in Australia?</h2>
+        <p style="max-width:60ch;margin:0 auto;">Australia combines high-quality education with an excellent quality of life, making it a top choice for Bangladeshi and international students alike.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card"><h3>🎓 Globally Recognized Degrees</h3><p>Australian universities rank among the world's best. Degrees are accredited, internationally recognized, and highly valued by employers globally.</p></div>
+        <div class="card"><h3>🌏 Post-Study Work Visa (PSW)</h3><p>Graduate with a 2–4 year Post-Study Work Visa. Work in Australia after graduation and gain international experience — a pathway to permanent residency.</p></div>
+        <div class="card"><h3>🏥 World-Class Healthcare</h3><p>Australia has one of the world's best healthcare systems. International students on a valid visa are covered by Overseas Student Health Cover (OSHC).</p></div>
+        <div class="card"><h3>🌊 Stunning Quality of Life</h3><p>From Sydney's harbor to Melbourne's coffee culture and Perth's beaches — Australia offers a safe, welcoming, and vibrant lifestyle for students.</p></div>
+        <div class="card"><h3>💼 Part-Time Work Rights</h3><p>Student visa holders can work up to 48 hours per fortnight during studies. This helps cover living costs while gaining valuable work experience.</p></div>
+        <div class="card"><h3>🤝 PR Pathway for Graduates</h3><p>Australia's Points-Tested PR system rewards graduates with skills in demand. An Australian degree adds significant points to your PR application.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:rgba(255,255,255,0.02);border-top:1px solid var(--nav-border);border-bottom:1px solid var(--nav-border);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Top Universities for International Students</h2>
+        <p style="max-width:60ch;margin:0 auto;">Australian universities are known for research excellence, innovative teaching, and strong graduate outcomes.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h3>🏛️ Australian National University (ANU)</h3><p>Ranked #1 in Australia, top 30 globally. Best for Research, Policy, Engineering, Computer Science.</p></div>
+        <div class="card"><h3>🎓 University of Melbourne</h3><p>Australia's #2 university. Top for Law, Business, Medicine, Engineering. Strong research culture.</p></div>
+        <div class="card"><h3>🏙️ University of Sydney (USyd)</h3><p>Australia's oldest university. Best for Architecture, Arts, Medicine, Business. Vibrant campus life.</p></div>
+        <div class="card"><h3>🔬 University of Queensland (UQ)</h3><p>Top 50 globally. Leading in Life Sciences, Medicine, Engineering, Business.</p></div>
+        <div class="card"><h3>💻 University of New South Wales (UNSW)</h3><p>Ranked top 50. Best for Engineering, CS, Business, Law. Strong industry connections.</p></div>
+        <div class="card"><h3>🎨 Monash University</h3><p>Australia's largest university. Top for Medicine, Engineering, Business, Arts. Global campuses.</p></div>
+        <div class="card"><h3>📚 University of Western Australia (UWA)</h3><p>Top 100 globally. Best for Mining Engineering, Marine Science, Business.</p></div>
+        <div class="card"><h3>🏄 University of Adelaide</h3><p>Top 120 globally. Known for Medicine, Dentistry, Engineering. Affordable living city.</p></div>
+        <div class="card"><h3>☕ RMIT University</h3><p>Specialized in Design, Architecture, Engineering, and Technology. Strong industry partnerships.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 style="margin-bottom:24px;">Subclass 500 Student Visa Process</h2>
+      <div class="grid-2" style="gap:40px;">
+        <div>
+          <div class="visa-step"><div class="step-num">1</div><div class="step-content"><h4>Receive Your CoE</h4><p>Apply to an Australian university and receive a Confirmation of Enrolment (CoE) once accepted. This is required for your visa application.</p></div></div>
+          <div class="visa-step"><div class="step-num">2</div><div class="step-content"><h4>Prepare Your Documents</h4><p>Gather: valid passport, CoE, proof of English (IELTS/PTE), financial evidence, health insurance (OSHC), and GTE statement.</p></div></div>
+          <div class="visa-step"><div class="step-num">3</div><div class="step-content"><h4>Complete Genuine Temporary Entrant (GTE) Statement</h4><p>Write a personal statement explaining your intention to study in Australia and return home after your studies.</p></div></div>
+          <div class="visa-step"><div class="step-num">4</div><div class="step-content"><h4>Apply Online via ImmiAccount</h4><p>Submit your Subclass 500 visa application through the Australian Department of Home Affairs ImmiAccount portal.</p></div></div>
+          <div class="visa-step"><div class="step-num">5</div><div class="step-content"><h4>Health Check & Biometrics</h4><p>Complete a medical examination at an approved panel clinic and provide biometrics as part of the process.</p></div></div>
+        </div>
+        <div>
+          <div class="highlight-box">
+            <h4>📋 Subclass 500 Requirements</h4>
+            <ul style="margin:0;padding-left:18px;">
+              <li>Confirmation of Enrolment (CoE) from an Australian school</li>
+              <li> Overseas Student Health Cover (OSHC) for the entire visa duration</li>
+              <li>English proficiency: IELTS 6.0 (5.5 each band) or PTE 50+</li>
+              <li>GTE (Genuine Temporary Entrant) statement</li>
+              <li>Proof of funds: AUD 21,041/year + tuition + travel</li>
+              <li>Passport and photograph</li>
+              <li>Academic transcripts and certificates</li>
+              <li>Police clearance certificate</li>
+              <li>Complete health examinations</li>
+            </ul>
+          </div>
+          <div class="highlight-box" style="border-color:rgba(40,167,69,0.4);background:rgba(40,167,69,0.08);">
+            <h4>✅ OSHC (Health Insurance)</h4>
+            <p>All international students must have OSHC for the duration of their visa. We help arrange this as part of your visa package.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:rgba(255,255,255,0.02);border-top:1px solid var(--nav-border);border-bottom:1px solid var(--nav-border);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Popular Programs for International Students</h2>
+        <p style="max-width:60ch;margin:0 auto;">Australian universities offer a wide range of programs popular among international students.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h3>💻 Information Technology</h3><p>CS, Data Science, Cybersecurity, AI. High demand for IT graduates in Australia's tech sector. PSW eligible.</p></div>
+        <div class="card"><h3>🏗️ Engineering</h3><p>Civil, Mechanical, Electrical, Mining, Petroleum. Australia faces skill shortages in engineering — strong PR pathway.</p></div>
+        <div class="card"><h3>📈 Business & Management</h3><p>Accounting, Finance, Marketing, MBA. CPA/CA accredited programs. High graduate employability.</p></div>
+        <div class="card"><h3>🐾 Veterinary & Agricultural Science</h3><p>Australia leads in agricultural research. Veterinary science, food science, and agribusiness are in demand.</p></div>
+        <div class="card"><h3>🏥 Nursing & Health Sciences</h3><p>Nursing, Medicine, Pharmacy, Public Health. High demand in Australia's healthcare sector. Strong PR pathway.</p></div>
+        <div class="card"><h3>🎨 Architecture & Design</h3><p>Architecture, Interior Design, Landscape Architecture. RMIT and USYD are globally ranked for design.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Estimated Costs to Study in Australia</h2>
+        <p style="max-width:60ch;margin:0 auto;">Australia offers excellent value compared to UK/US universities, with scholarship options available.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Item</th><th>Estimated Annual Cost (AUD)</th></tr></thead>
+          <tbody>
+            <tr><td>Tuition (undergraduate)</td><td>AUD 20,000 – 45,000</td></tr>
+            <tr><td>Tuition (postgraduate)</td><td>AUD 22,000 – 50,000</td></tr>
+            <tr><td>Living Expenses</td><td>AUD 21,041 (DIAC guideline)</td></tr>
+            <tr><td>OSHC (Health Insurance)</td><td>AUD 400 – 600/year</td></tr>
+            <tr><td>Student Visa Application</td><td>AUD 650 (application fee)</td></tr>
+            <tr><td>Part-time work earnings (approx)</td><td>AUD 15,000 – 25,000/year</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="highlight-box" style="margin-top:24px;">
+        <h4>💡 WorldLink Can Help</h4>
+        <p>From university selection to visa application, financial document preparation, and OSHC arrangement — WorldLink provides end-to-end support for your Australian study journey.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="text-align:center;">
+      <h2>Ready to Study in Australia?</h2>
+      <p style="max-width:55ch;margin:12px auto 24px;">Australia offers a world-class education with a clear pathway to your future. Let WorldLink guide you through every step.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="apply-now.html" class="btn" style="padding:14px 28px;">Apply Now →</a>
+        <a href="https://wa.me/601124328920?text=Hi, I want to study in Australia" target="_blank" class="btn btn-outline" style="padding:14px 28px;">WhatsApp: +6011 2432 8920</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="whatsapp-float"><a href="https://wa.me/601124328920" target="_blank" style="color:#fff;font-size:1.5rem;">💬</a></div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="logo.pnj.png" alt="WorldLink Logo"><h3>WorldLink Migration & Visa Consultancy</h3><p>Your trusted partner for global migration and study abroad services.</p><div class="footer-buttons"><a href="https://wa.me/601124328920" target="_blank">WhatsApp</a><a href="mailto:enuires.worldlinkmigration@gmail.com">Email</a></div></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="visa-applications.html">Visa Applications</a></li><li><a href="immigration-advice.html">Immigration Advice</a></li><li><a href="document-preparation.html">Document Preparation</a></li><li><a href="consultation-support.html">Consultation & Support</a></li></ul></div>
+      <div class="footer-col"><h4>Destinations</h4><ul><li><a href="usa.html">USA</a></li><li><a href="canada.html">Canada</a></li><li><a href="uk.html">UK</a></li><li><a href="australia.html">Australia</a></li><li><a href="malaysia.html">Malaysia</a></li><li><a href="china.html">China</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="get-in-touch.html">Get in Touch</a></li><li><a href="contact-us.html">Contact Us</a></li><li><a href="locations.html">Locations</a></li><li><a href="support.html">Support</a></li><li><a href="apply-now.html">Apply Now</a></li></ul><p style="margin-top:16px;font-size:0.85rem;">📞 +6011 2432 8920<br>📍 Rajshahi, Bangladesh</p></div>
+    </div>
+    <div class="footer-bottom"><p>Copyright © 2025 WorldLink Migration & Visa Consultancy. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="auth.js"></script>
+<script>
+function toggleMobileNav() { document.getElementById('mainNav').classList.toggle('open'); }
+function updateAuthNav() { const user = getCurrentUser(); const authItem = document.getElementById('authNavItem'); if (!authItem) return; if (user) { authItem.innerHTML = `<a href="#">👤 ${user.username} <span class="nav-arrow">▾</span></a><ul><li><a href="${user.role==='admin'?'admin-panel.html':'user-dashboard.html'}">Dashboard</a></li><li><a href="#" onclick="logout()">Logout</a></li></ul>`; } }
+document.addEventListener('DOMContentLoaded', () => { updateAuthNav(); document.querySelectorAll('.main-nav li a').forEach(link => { if (link.nextElementSibling && link.nextElementSibling.tagName === 'UL') { link.addEventListener('click', e => { if (window.innerWidth <= 768) { e.preventDefault(); link.nextElementSibling.classList.toggle('open'); } }); } }); });
+</script>
+</body>
+</html>

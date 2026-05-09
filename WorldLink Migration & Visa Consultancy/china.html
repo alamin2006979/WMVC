@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study in China - WorldLink Migration & Visa Consultancy</title>
+  <link rel="icon" href="logo.pnj.png" type="image/png">
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .page-hero { background: linear-gradient(135deg, rgba(108,140,255,0.18), rgba(200,0,0,0.4)); border-bottom: 1px solid var(--nav-border); padding: 60px 0 40px; text-align: center; }
+    .quick-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin: 28px auto; max-width: 780px; }
+    .quick-fact { background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px; text-align: center; }
+    .quick-fact-icon { font-size: 1.6rem; margin-bottom: 6px; }
+    .quick-fact-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .quick-fact-value { font-size: 1rem; font-weight: 700; margin-top: 4px; color: var(--accent); }
+    .visa-step { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+    .step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 800; flex-shrink: 0; }
+    .step-content h4 { margin: 0 0 4px; }
+    .step-content p { margin: 0; font-size: 0.9rem; }
+    .highlight-box { padding: 20px 24px; border-radius: 12px; background: rgba(108,140,255,0.08); border: 1px solid rgba(108,140,255,0.2); border-left: 4px solid var(--accent); margin: 24px 0; }
+    .highlight-box h4 { margin: 0 0 8px; color: var(--accent); }
+    .highlight-box p { margin: 0; }
+    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 90; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: grid; place-items: center; font-size: 1.5rem; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.2s; }
+    .whatsapp-float:hover { transform: scale(1.1); }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="main.html" class="brand"><img src="logo.pnj.png" alt="WorldLink Logo"><span class="brand-name">WorldLink Migration & Visa Consultancy</span></a>
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Open menu">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <button class="nav-close" onclick="toggleMobileNav()">✕</button>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="#services">Services <span class="nav-arrow">▾</span></a>
+          <ul><li><a href="visa-applications.html">Visa Applications</a></li><li><a href="immigration-advice.html">Immigration Advice</a></li><li><a href="document-preparation.html">Document Preparation</a></li><li><a href="consultation-support.html">Consultation & Support</a></li></ul>
+        </li>
+        <li><a href="#about">About <span class="nav-arrow">▾</span></a>
+          <ul><li><a href="our-story.html">Our Story</a></li><li><a href="team.html">Team</a></li><li><a href="mission.html">Mission</a></li></ul>
+        </li>
+        <li><a href="#contact">Contact <span class="nav-arrow">▾</span></a>
+          <ul><li><a href="get-in-touch.html">Get in Touch</a></li><li><a href="contact-us.html">Contact Us</a></li><li><a href="locations.html">Locations</a></li><li><a href="support.html">Support</a></li></ul>
+        </li>
+        <li><a href="#study">Study Destinations <span class="nav-arrow">▾</span></a>
+          <ul><li><a href="usa.html">USA</a></li><li><a href="canada.html">Canada</a></li><li><a href="uk.html">UK</a></li><li><a href="australia.html">Australia</a></li><li><a href="malaysia.html">Malaysia</a></li><li><a href="china.html">China</a></li></ul>
+        </li>
+        <li id="authNavItem"><a href="login.html">Sign In</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge">🇨🇳 Study in China</span>
+      <h1 style="margin-top:12px;">Study in China</h1>
+      <p>Rapidly rising as a global education hub, China offers world-class universities, cutting-edge research, and an incredible cultural experience — at remarkably affordable costs.</p>
+      <div class="quick-facts">
+        <div class="quick-fact"><div class="quick-fact-icon">🏆</div><div class="quick-fact-label">Top Universities</div><div class="quick-fact-value">Tsinghua, Peking, Fudan</div></div>
+        <div class="quick-fact"><div class="quick-fact-icon">👥</div><div class="quick-fact-label">Intl Students</div><div class="quick-fact-value">200,000+</div></div>
+        <div class="quick-fact"><div class="quick-fact-icon">💰</div><div class="quick-fact-label">Avg. Tuition</div><div class="quick-fact-value">¥ 15,000–35,000/yr</div></div>
+        <div class="quick-fact"><div class="quick-fact-icon">🎓</div><div class="quick-fact-label">Scholarships</div><div class="quick-fact-value">CSC Full Scholarship</div></div>
+      </div>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="apply-now.html" class="btn" style="padding:12px 24px;">Apply to China →</a>
+        <a href="https://wa.me/601124328920?text=Hi, I'm interested in studying in China" target="_blank" class="btn btn-outline" style="padding:12px 24px;">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Why Study in China?</h2>
+        <p style="max-width:60ch;margin:0 auto;">China is now the 3rd most popular destination for international students globally. Here's why thousands are choosing China for their education.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card"><h3>🏆 World-Class Universities</h3><p>Tsinghua University ranks #15 globally and Peking University (#18). China now has 7 universities in the QS top 100. Degrees are internationally accredited and recognized globally.</p></div>
+        <div class="card"><h3>💰 Extremely Affordable</h3><p>Tuition fees range from ¥15,000–35,000/year (~$2,100–$4,900). Living costs in Chinese cities are very affordable — food, transport, and accommodation cost far less than in the UK or Australia.</p></div>
+        <div class="card"><h3>🎓 CSC Full Scholarships</h3><p>The Chinese Government Scholarship (CSC) covers full tuition, accommodation, living allowance (¥3,000/month), and health insurance. This makes studying in China essentially free!</p></div>
+        <div class="card"><h3>🔬 Cutting-Edge Research</h3><p>China is the world's #1 publisher of scientific research. In fields like AI, 5G technology, renewable energy, quantum computing, and biotechnology, China leads globally.</p></div>
+        <div class="card"><h3>🌐 Learn Mandarin — a Global Language</h3><p>China has the world's largest economy and is a major player in global business. Learning Mandarin gives you a massive career advantage in the global job market.</p></div>
+        <div class="card"><h3>🌏 Strategic Gateway to Asia</h3><p>China's Belt and Road initiative and growing economic influence make it a strategic hub. A degree from China opens doors to careers across Asia and globally.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:rgba(255,255,255,0.02);border-top:1px solid var(--nav-border);border-bottom:1px solid var(--nav-border);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Top Chinese Universities</h2>
+        <p style="max-width:60ch;margin:0 auto;">China's top universities are world-renowned for research and academic excellence across all disciplines.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h3>🔬 Tsinghua University</h3><p>China's #1 university (QS #15 globally). Best for Engineering, CS, Business, Law. Located in Beijing — China's tech and innovation hub.</p></div>
+        <div class="card"><h3>🏛️ Peking University</h3><p>China's #2 university (QS #18 globally). Best for Medicine, Law, Arts, Languages, Economics. Beijing's historic campus.</p></div>
+        <div class="card"><h3>📈 Fudan University</h3><p>Top 40 globally. Best for Medicine, Business, Journalism, International Relations. Shanghai's premier research university.</p></div>
+        <div class="card"><h3>🔬 Zhejiang University</h3><p>Top 50 globally. Best for Engineering, Agriculture, Medicine, Computer Science. Located in Hangzhou (Alibaba's home).</p></div>
+        <div class="card"><h3>🏛️ Shanghai Jiao Tong</h3><p>Top 100 globally. Best for Engineering, Business, Medicine, Law. Located in Shanghai — China's financial capital.</p></div>
+        <div class="card"><h3>🌍 Beijing Institute of Technology</h3><p>Top for Engineering, AI, Robotics, Aerospace. Chinese Government Scholarship priorities these STEM fields.</p></div>
+        <div class="card"><h3>🏥 Wuhan University</h3><p>Top 150 globally. Best for Medicine, Hydraulic Engineering, Navigation. Beautiful campus on the Yangtze River.</p></div>
+        <div class="card"><h3>🌐 University of Science & Technology of China</h3><p>China's top pure science university. Best for Physics, Chemistry, Mathematics, Computer Science. Leading AI research.</p></div>
+        <div class="card"><h3>🏛️ Nanjing University</h3><p>Top 130 globally. Best for Liberal Arts, History, Languages, Environmental Science. One of China's oldest universities.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 style="margin-bottom:24px;">X1 Student Visa (Visa for Long-term Study) Process</h2>
+      <div class="grid-2" style="gap:40px;">
+        <div>
+          <div class="visa-step"><div class="step-num">1</div><div class="step-content"><h4>Apply & Receive JW201 / JW202 Form</h4><p>Apply to a Chinese university and receive the Form JW201 (for scholarship students) or JW202 (for self-funded students). This is your admission document.</p></div></div>
+          <div class="visa-step"><div class="step-num">2</div><div class="step-content"><h4>Apply for Chinese Government Scholarship (CSC) — Optional</h4><p>If applying for CSC scholarship, submit your application through the Chinese Embassy or directly via the CSC website. Results typically come within 2 months.</p></div></div>
+          <div class="visa-step"><div class="step-num">3</div><div class="step-content"><h4>Submit Visa Application at Chinese Embassy</h4><p>Apply for the X1 visa (valid for long-term study) at the Chinese Embassy in Dhaka. Bring: JW201/JW202 form, passport, health examination certificate, photo.</p></div></div>
+          <div class="visa-step"><div class="step-num">4</div><div class="step-content"><h4>Health Examination in Bangladesh</h4><p>Complete a health examination at an approved hospital and obtain a health certificate. This is required for the X1 visa.</p></div></div>
+          <div class="visa-step"><div class="step-num">5</div><div class="step-content"><h4>Register with University & Get Residence Permit</h4><p>Within 30 days of arrival in China, register at your university and apply for a Residence Permit — which allows you to stay for the full duration of your studies.</p></div></div>
+        </div>
+        <div>
+          <div class="highlight-box">
+            <h4>📋 X1 Visa Requirements</h4>
+            <ul style="margin:0;padding-left:18px;">
+              <li>JW201 or JW202 form from your Chinese university</li>
+              <li>Valid passport (minimum 6 months validity)</li>
+              <li>Health examination certificate</li>
+              <li>Passport-size photograph (white background)</li>
+              <li>Completed visa application form</li>
+              <li>Proof of accommodation in China</li>
+              <li>Financial proof (for self-funded students)</li>
+              <li>CSC scholarship certificate (if applicable)</li>
+            </ul>
+          </div>
+          <div class="highlight-box" style="border-color:rgba(40,167,69,0.4);background:rgba(40,167,69,0.08);">
+            <h4>✅ Chinese Government Scholarship (CSC)</h4>
+            <p>CSC covers: Full tuition waiver, on-campus accommodation, living allowance (¥3,000/month for doctoral, ¥2,500 for master's), health insurance. WorldLink helps with CSC application — one of the most generous scholarships in the world.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:rgba(255,255,255,0.02);border-top:1px solid var(--nav-border);border-bottom:1px solid var(--nav-border);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Popular Programs for International Students</h2>
+        <p style="max-width:60ch;margin:0 auto;">Chinese universities excel in STEM fields, medicine, and business — with many programs taught in English for international students.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h3>💻 Computer Science & AI</h3><p>CS, AI, Machine Learning, Data Science. China's tech industry (Alibaba, Tencent, Huawei) is world-leading. Research opportunities in 5G, cloud computing, and robotics.</p></div>
+        <div class="card"><h3>⚙️ Engineering</h3><p>Civil, Mechanical, Electrical, Chemical, Civil Engineering. China leads in high-speed rail, bridges, and infrastructure. Strong research funding.</p></div>
+        <div class="card"><h3>🏥 Medicine</h3><p>MBBS (taught in English), TCM (Traditional Chinese Medicine), Pharmacy, Public Health. Peking, Fudan, and Tsinghua have top medical schools.</p></div>
+        <div class="card"><h3>🌐 Mandarin Chinese Language</h3><p>Chinese language programs (HSK preparation) — highly valuable for future career prospects. Many scholarships include 1 year of language training.</p></div>
+        <div class="card"><h3>📈 Business & Economics</h3><p>MBA, International Business, Economics. Programs taught in English at top schools. Access to China's booming economy and financial sector.</p></div>
+        <div class="card"><h3>🔬 Biotechnology & Life Sciences</h3><p>Genetics, Pharmacology, Environmental Science, Marine Biology. China's research output in life sciences is growing rapidly.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2>Estimated Costs to Study in China</h2>
+        <p style="max-width:60ch;margin:0 auto;">China is one of the most affordable study destinations — especially when you factor in the full CSC scholarship which covers everything.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Item</th><th>Self-Funded (¥/year)</th><th>CSC Scholarship</th></tr></thead>
+          <tbody>
+            <tr><td>Tuition (average)</td><td>¥ 15,000 – 35,000</td><td>Fully covered</td></tr>
+            <tr><td>Accommodation (on-campus)</td><td>¥ 4,000 – 8,000</td><td>Covered by scholarship</td></tr>
+            <tr><td>Living expenses</td><td>¥ 10,000 – 18,000</td><td>¥ 30,000–36,000/yr stipend</td></tr>
+            <tr><td>Health Insurance</td><td>¥ 600 – 1,000</td><td>Covered</td></tr>
+            <tr><td><strong>Total (self-funded)</strong></td><td><strong>¥ 30,000 – 62,000/yr</strong></td><td><strong>Nearly free!</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="highlight-box" style="margin-top:24px;">
+        <h4>💡 CSC Scholarship — How to Apply</h4>
+        <p>Apply through the Chinese Embassy in Bangladesh OR directly through the university's international office. Required documents: passport, academic transcripts, HSK certificate (for Chinese-taught programs), recommendation letters, study plan. WorldLink assists with the complete CSC application process.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="text-align:center;">
+      <h2>Ready to Study in China?</h2>
+      <p style="max-width:55ch;margin:12px auto 24px;">China offers world-class education at a fraction of the cost, plus full scholarships through CSC. WorldLink helps you navigate the entire process — from university application to X1 visa and arrival support.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="apply-now.html" class="btn" style="padding:14px 28px;">Apply Now →</a>
+        <a href="https://wa.me/601124328920?text=Hi, I want to study in China" target="_blank" class="btn btn-outline" style="padding:14px 28px;">WhatsApp: +6011 2432 8920</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="whatsapp-float"><a href="https://wa.me/601124328920" target="_blank" style="color:#fff;font-size:1.5rem;">💬</a></div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="logo.pnj.png" alt="WorldLink Logo"><h3>WorldLink Migration & Visa Consultancy</h3><p>Your trusted partner for global migration and study abroad services.</p><div class="footer-buttons"><a href="https://wa.me/601124328920" target="_blank">WhatsApp</a><a href="mailto:enuires.worldlinkmigration@gmail.com">Email</a></div></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="visa-applications.html">Visa Applications</a></li><li><a href="immigration-advice.html">Immigration Advice</a></li><li><a href="document-preparation.html">Document Preparation</a></li><li><a href="consultation-support.html">Consultation & Support</a></li></ul></div>
+      <div class="footer-col"><h4>Destinations</h4><ul><li><a href="usa.html">USA</a></li><li><a href="canada.html">Canada</a></li><li><a href="uk.html">UK</a></li><li><a href="australia.html">Australia</a></li><li><a href="malaysia.html">Malaysia</a></li><li><a href="china.html">China</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="get-in-touch.html">Get in Touch</a></li><li><a href="contact-us.html">Contact Us</a></li><li><a href="locations.html">Locations</a></li><li><a href="support.html">Support</a></li><li><a href="apply-now.html">Apply Now</a></li></ul><p style="margin-top:16px;font-size:0.85rem;">📞 +6011 2432 8920<br>📍 Rajshahi, Bangladesh</p></div>
+    </div>
+    <div class="footer-bottom"><p>Copyright © 2025 WorldLink Migration & Visa Consultancy. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="auth.js"></script>
+<script>
+function toggleMobileNav() { document.getElementById('mainNav').classList.toggle('open'); }
+function updateAuthNav() { const user = getCurrentUser(); const authItem = document.getElementById('authNavItem'); if (!authItem) return; if (user) { authItem.innerHTML = `<a href="#">👤 ${user.username} <span class="nav-arrow">▾</span></a><ul><li><a href="${user.role==='admin'?'admin-panel.html':'user-dashboard.html'}">Dashboard</a></li><li><a href="#" onclick="logout()">Logout</a></li></ul>`; } }
+document.addEventListener('DOMContentLoaded', () => { updateAuthNav(); document.querySelectorAll('.main-nav li a').forEach(link => { if (link.nextElementSibling && link.nextElementSibling.tagName === 'UL') { link.addEventListener('click', e => { if (window.innerWidth <= 768) { e.preventDefault(); link.nextElementSibling.classList.toggle('open'); } }); } }); });
+</script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="logo.pnj.png" type="image/png">
+  <title>Register - WorldLink Migration & Visa Consultancy</title>
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .auth-wrapper { min-height: calc(100vh - 160px); display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+    .auth-card {
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 16px; padding: 40px; width: 100%; max-width: 440px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .auth-card h2 { text-align: center; margin-bottom: 8px; }
+    .auth-card p { text-align: center; margin-bottom: 28px; }
+    .auth-card form { display: flex; flex-direction: column; gap: 16px; }
+    .auth-divider { text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--nav-border); color: var(--muted); font-size: 0.9rem; }
+    .auth-divider a { color: var(--accent); font-weight: 600; }
+    .error-msg { background: rgba(220,53,69,0.15); border: 1px solid rgba(220,53,69,0.3); color: #ff6b6b; padding: 10px 14px; border-radius: 8px; font-size: 0.9rem; display: none; }
+    .success-msg { background: rgba(40,167,69,0.15); border: 1px solid rgba(40,167,69,0.3); color: #28a745; padding: 10px 14px; border-radius: 8px; font-size: 0.9rem; display: none; }
+    .pw-strength { height: 4px; border-radius: 2px; background: rgba(255,255,255,0.1); margin-top: 6px; overflow: hidden; }
+    .pw-strength-bar { height: 100%; border-radius: 2px; transition: width 0.3s, background 0.3s; width: 0%; }
+    .pw-strength-label { font-size: 0.75rem; margin-top: 4px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="main.html" class="brand" aria-label="WorldLink home">
+      <img src="logo.pnj.png" alt="WorldLink Logo">
+      <span class="brand-name">WorldLink Migration & Visa Consultancy</span>
+    </a>
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Open menu">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <button class="nav-close" onclick="toggleMobileNav()">✕</button>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="#services">Services <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="visa-applications.html">Visa Applications</a></li>
+            <li><a href="immigration-advice.html">Immigration Advice</a></li>
+            <li><a href="document-preparation.html">Document Preparation</a></li>
+            <li><a href="consultation-support.html">Consultation & Support</a></li>
+          </ul>
+        </li>
+        <li><a href="#about">About <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="mission.html">Mission</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="get-in-touch.html">Get in Touch</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </li>
+        <li><a href="#study">Study Destinations <span class="nav-arrow">▾</span></a>
+          <ul>
+            <li><a href="usa.html">USA</a></li>
+            <li><a href="canada.html">Canada</a></li>
+            <li><a href="uk.html">UK</a></li>
+            <li><a href="australia.html">Australia</a></li>
+            <li><a href="malaysia.html">Malaysia</a></li>
+            <li><a href="china.html">China</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="auth-wrapper">
+    <div class="auth-card">
+      <h2>Create Account</h2>
+      <p>Register to track your applications and access personalized services.</p>
+
+      <div id="errorMsg" class="error-msg"></div>
+      <div id="successMsg" class="success-msg"></div>
+
+      <form id="registerForm" onsubmit="handleRegister(event)">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" placeholder="Choose a username (min. 3 characters)" required minlength="3" autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Create a password (min. 6 characters)" required minlength="6" autocomplete="new-password" oninput="updatePwStrength()">
+          <div class="pw-strength"><div class="pw-strength-bar" id="pwBar"></div></div>
+          <div class="pw-strength-label" id="pwLabel"></div>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Repeat your password" required autocomplete="new-password">
+        </div>
+        <button type="submit" class="btn" style="width:100%;padding:14px;font-size:1rem;" id="registerBtn">Create Account →</button>
+      </form>
+
+      <div class="auth-divider">
+        Already have an account? <a href="login.html">Sign in here →</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.pnj.png" alt="WorldLink Logo">
+        <h3>WorldLink Migration & Visa Consultancy</h3>
+        <p>Your trusted partner for global migration and study abroad services.</p>
+        <div class="footer-buttons">
+          <a href="https://wa.me/601124328920" target="_blank">WhatsApp</a>
+          <a href="mailto:enuires.worldlinkmigration@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="visa-applications.html">Visa Applications</a></li>
+        <li><a href="immigration-advice.html">Immigration Advice</a></li>
+        <li><a href="document-preparation.html">Document Preparation</a></li>
+        <li><a href="consultation-support.html">Consultation & Support</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Destinations</h4><ul>
+        <li><a href="usa.html">USA</a></li>
+        <li><a href="canada.html">Canada</a></li>
+        <li><a href="uk.html">United Kingdom</a></li>
+        <li><a href="australia.html">Australia</a></li>
+        <li><a href="malaysia.html">Malaysia</a></li>
+        <li><a href="china.html">China</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="get-in-touch.html">Get in Touch</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="apply-now.html">Apply Now</a></li>
+      </ul>
+      <p style="margin-top:16px;font-size:0.85rem;">📞 +6011 2432 8920<br>📍 Rajshahi, Bangladesh</p></div>
+    </div>
+    <div class="footer-bottom"><p>Copyright © 2025 WorldLink Migration & Visa Consultancy. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="auth.js"></script>
+<script>
+function toggleMobileNav() { document.getElementById('mainNav').classList.toggle('open'); }
+
+function updatePwStrength() {
+  const pw = document.getElementById('password').value;
+  const bar = document.getElementById('pwBar');
+  const label = document.getElementById('pwLabel');
+  let strength = 0;
+  if (pw.length >= 6) strength++;
+  if (pw.length >= 10) strength++;
+  if (/[A-Z]/.test(pw) && /[a-z]/.test(pw) && /[0-9]/.test(pw)) strength++;
+  if (/[^A-Za-z0-9]/.test(pw)) strength++;
+
+  const colors = ['#dc3545', '#ffc107', '#28a745', '#28a745'];
+  const labels = ['', 'Weak', 'Fair', 'Good', 'Strong'];
+  const pct = (strength / 4) * 100;
+  bar.style.width = pct + '%';
+  bar.style.background = colors[strength];
+  label.textContent = strength ? labels[strength] : '';
+}
+
+function handleRegister(e) {
+  e.preventDefault();
+  const username = document.getElementById('username').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+  const errorMsg = document.getElementById('errorMsg');
+  const successMsg = document.getElementById('successMsg');
+  const btn = document.getElementById('registerBtn');
+
+  errorMsg.style.display = 'none';
+  successMsg.style.display = 'none';
+
+  if (password.length < 6) {
+    errorMsg.textContent = 'Password must be at least 6 characters.';
+    errorMsg.style.display = 'block';
+    return;
+  }
+  if (password !== confirmPassword) {
+    errorMsg.textContent = 'Passwords do not match.';
+    errorMsg.style.display = 'block';
+    return;
+  }
+
+  btn.textContent = 'Creating account…';
+  btn.disabled = true;
+
+  setTimeout(() => {
+    if (register(username, email, password)) {
+      successMsg.textContent = 'Account created successfully! Redirecting to login…';
+      successMsg.style.display = 'block';
+      btn.textContent = 'Done!';
+      setTimeout(() => { window.location.href = 'login.html'; }, 1200);
+    } else {
+      errorMsg.textContent = 'Username or email already exists. Please choose another.';
+      errorMsg.style.display = 'block';
+      btn.textContent = 'Create Account →';
+      btn.disabled = false;
+    }
+  }, 600);
+}
+
+// Redirect if already logged in
+document.addEventListener('DOMContentLoaded', () => {
+  const user = getCurrentUser();
+  if (user) {
+    window.location.href = user.role === 'admin' ? 'admin-panel.html' : 'user-dashboard.html';
+  }
+});
+</script>
+</body>
+</html>
